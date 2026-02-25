@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexoraTech | Digital Growth Agency</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* ================= ROOT ================= */
+
+        :root {
+            --primary: #c6a85c;
+            --light: #ffffff;
+            --dark: #0f0f0f;
+            --gray: #f6f6f6;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            color: #111;
+            transition: .3s;
+        }
+
+        .dark {
+            background: var(--dark);
+            color: #eee;
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 120px 8%;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0 0 20px 0;
+        }
+
+        h2 {
+            font-size: 42px;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 120px;
+            /* متوسط مش كبير ولا صغير */
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, .04);
+            transition: .3s;
+        }
+
+        /* اللوجو بدون تغيير مكان */
+        .logo {
+            font-size: 30px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        /* اللينكات */
+        nav ul {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            margin-right: 220px;
+            padding: 0;
+        }
+
+        /* شكل اللينك */
+        nav ul li a {
+            position: relative;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            /* نفس الحجم متغيرش */
+            color: inherit;
+            padding-bottom: 5px;
+        }
+
+        /* الخط تحت - من الشمال لليمين */
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2.5px;
+            background: var(--primary);
+            transition: width .35s ease;
+        }
+
+        /* عند الهوفر */
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* زرار الموبايل */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* موبايل */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+                position: relative;
+                right: 200px;
+            }
+
+            nav {
+                padding: 12px 110px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: 0px;
+                background: white;
+                text-align: center;
+                width: 82%;
+                height: auto;
+                flex-direction: column;
+                gap: 20px;
+                padding: 40px 0;
+                border-radius: 12px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, .1);
+                display: none;
+                z-index: 1001;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-overlay {
+                position: fixed;
+                top: 60px;
+                /* تحت navbar */
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4);
+                /* الظل */
+                z-index: 1000;
+                display: none;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+                position: relative;
+                right: 80px;
+            }
+
+            .logo {
+                font-size: 26px;
+                margin-left: 25px;
+            }
+
+            nav {
+                padding: 2px 110px;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                /* تحت الناف مباشرة */
+                left: 0px;
+                background: white;
+                width: 85%;
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, .1);
+                display: none;
+                /* مهم */
+                z-index: 1001;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-overlay {
+                position: fixed;
+                top: 60px;
+                /* تحت navbar */
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4);
+                /* الظل */
+                z-index: 1000;
+                display: none;
+            }
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            height: 67vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
+                url("team1.png") center/cover no-repeat;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 5vw, 70px);
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 650px;
+        }
+
+        .btn {
+            padding: 18px 34px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 15px;
+            margin-top: 25px;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+
+        .btn:hover {
+            opacity: .85;
+        }
+
+        .container-reveal {
+            opacity: -1;
+            transform: translateY(-10px);
+            transition: 1s;
+        }
+
+        /* ================= HERO MOBILE FIX ================= */
+
+        @media (max-width: 768px) {
+
+            .hero {
+                height: 100vh;
+                /* يخليها تاخد أغلب الشاشة */
+                text-align: center;
+                /* يظبط التوسيط */
+                padding: 0 20px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+                /* تصغير متوازن */
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 18px;
+                margin-top: 15px;
+            }
+
+            .btn {
+
+                margin: 15px 15px 0 0;
+                /* يشيل المارجن اللي كان بيطلعهم لفوق */
+                padding: 14px 12px;
+            }
+
+        }
+
+        /* ================= ABOUT SECTION ================= */
+
+        #about {
+            padding: 100px 0;
+        }
+
+        .about-title {
+            text-align: left;
+            font-size: 35px;
+            margin-bottom: 18px;
+            color: var(--primary);
+        }
+
+        /* البوكس الرئيسي */
+        .about-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: #ffffff;
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.07);
+            transition: .3s;
+            margin-top: -10px;
+        }
+
+        /* النص */
+        .about-text h3 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* الصورة */
+        .about-image {
+            border-radius: 18px;
+            overflow: hidden;
+            /* مهم جدا */
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .feature-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            /* مسافة بين الأيقونة والكلام */
+        }
+
+        .feature-box i {
+            font-size: 25px;
+            color: var(--primary);
+            /* غير اللون براحتك */
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 992px) {
+
+            .about-box {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px;
+            }
+
+            .about-image {
+                order: -1;
+                /* يخلي الصورة فوق */
+            }
+
+            .about-image img {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            #about {
+                padding: 70px 0;
+            }
+
+            .about-box {
+                padding: 25px;
+                gap: 25px;
+            }
+
+            .about-title {
+                margin-top: 45px;
+            }
+
+            .about-text h3 {
+                font-size: 22px;
+            }
+
+            .about-text p {
+                font-size: 16px;
+            }
+
+            .about-image img {
+                height: 220px;
+            }
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 70px;
+        }
+
+        .service-box {
+            background: #fff;
+            padding: 45px;
+            border-radius: 25px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .06);
+            transition: .4s;
+            text-align: center;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-title h2 {
+            text-align: left;
+            font-size: 40px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .service-box i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-box h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        /* ================= PORTFOLIO ================= */
+
+        #portfolio {
+            padding: 100px 0;
+        }
+
+        .portfolio-title {
+            text-align: left;
+            font-size: 35px;
+            margin-bottom: 18px;
+            color: var(--primary);
+        }
+
+        /* البوكس الرئيسي */
+        .portfolio-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: #ffffff;
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.07);
+            transition: .3s;
+            margin-bottom: 40px;
+
+        }
+
+        /* النص */
+        .portfolio-text h3 {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .portfolio-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* الصورة */
+        .portfolio-image {
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .feature-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            /* مسافة بين الأيقونة والكلام */
+        }
+
+        .feature-box i {
+            font-size: 25px;
+            color: var(--primary);
+            /* غير اللون براحتك */
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .results-section h4 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 992px) {
+
+            .portfolio-box {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px;
+            }
+
+            .portfolio-title {
+                margin-top: 40px;
+            }
+
+            .portfolio-image {
+                order: -1;
+                /* يخلي الصورة فوق */
+            }
+
+            .portfolio-image img {
+                height: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            #portfolio {
+                padding: 70px 0;
+            }
+
+            .portfolio-box {
+                padding: 25px;
+                gap: 25px;
+            }
+
+            .portfolio-text h3 {
+                font-size: 22px;
+            }
+
+            .portfolio-text p {
+                font-size: 16px;
+            }
+
+            .portfolio-image img {
+                height: auto;
+            }
+
+            .btn-outline {
+                border: 2px solid var(--primary);
+                color: var(--primary);
+            }
+
+            .btn-outline:hover {
+                background: var(--primary);
+                color: #ffffff;
+                transform: translateY(-3px);
+            }
+        }
+
+        /* ================= WHY US ================= */
+
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 38px;
+            margin-top: 70px;
+        }
+
+        .why-us-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .06);
+            transition: .4s;
+            text-align: center;
+        }
+
+        .why-us-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .why-us-title h2 {
+            text-align: left;
+            font-size: 40px;
+            margin-top: -80px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .why-us-box i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .why-us-box h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        /* تابلت */
+        @media (max-width: 1200px) {
+            .why-us-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* تابلت صغير */
+        @media (max-width: 992px) {
+            .why-us-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* موبايل */
+        @media (max-width: 576px) {
+            .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ================= INDUSTRIES ================= */
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 38px;
+            margin-top: 70px;
+        }
+
+        .industries-box {
+            background: #fff;
+            padding: 22px;
+            border-radius: 25px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .06);
+            transition: .4s;
+            text-align: center;
+        }
+
+        .industries-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .industries-title h2 {
+            text-align: left;
+            font-size: 40px;
+            margin-top: -80px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .industries-box i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .industries-box h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        /* تابلت */
+        @media (max-width: 1200px) {
+            .industries-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* تابلت صغير */
+        @media (max-width: 992px) {
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* موبايل */
+        @media (max-width: 576px) {
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .industries-title h2 {
+                font-size: 30px;
+            }
+        }
+
+        /* ================= TESTIMONIALS ================= */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--primary);
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 55px;
+            color: white;
+        }
+
+        .testimonial-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            gap: 30px;
+            transition: transform .5s ease;
+        }
+
+        .testimonial-box {
+            flex: 0 0 calc((100% - 157px) / 3);
+            background: #fff;
+            padding: 16px;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+
+        .testimonial-box h3 {
+            margin-bottom: -8px;
+        }
+
+        .testimonial-box p {
+            font-size: 15px;
+            color: #272727;
+        }
+
+        .user-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .stars {
+            color: gold;
+            margin: 10px 0 15px;
+            font-size: 18px;
+            margin-bottom: -8px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 60%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 32px;
+            cursor: pointer;
+            z-index: 10;
+            transition: 0.3s ease;
+        }
+
+        .arrow:hover {
+            transform: translateY(-50%) scale(1.3);
+        }
+
+        .arrow.left {
+            left: 8px;
+        }
+
+        .arrow.right {
+            right: 8px;
+        }
+
+        @media (max-width: 992px) {
+            .testimonial-box {
+                flex: 0 0.06 90.4%;
+            }
+
+            .arrow.left {
+                left: 5px;
+            }
+
+            .arrow.right {
+                right: 5px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .testimonial-box {
+                flex: 0 0 92%;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .arrow.left {
+                left: 8px;
+            }
+
+            .arrow.right {
+                right: 8px;
+            }
+
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-box {
+            text-align: center;
+            margin-top: -50px;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-container h2 {
+            font-size: 27px;
+            margin-bottom: 45px;
+            color: var(--primary);
+        }
+
+        .contact-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-container input,
+        .contact-container textarea {
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-family: inherit;
+        }
+
+        .contact-container .btn {
+            margin-right: 0;
+        }
+
+        .contact-info {
+            margin-top: 25px;
+            font-weight: 600;
+        }
+
+        /*================== CONTACT-2 ==================*/
+
+        .contact-us-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 38px;
+            margin-top: 70px;
+        }
+
+        .contact-us-box {
+            background: #fff;
+            padding: 23px;
+            border-radius: 25px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .06);
+            transition: .4s;
+            text-align: center;
+        }
+
+        .contact-us-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-us-title h2 {
+            text-align: left;
+            font-size: 40px;
+            margin-top: -10px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .contact-us-box i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-us-box h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        /* تابلت */
+        @media (max-width: 1200px) {
+            .contact-us-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* تابلت صغير */
+        @media (max-width: 992px) {
+            .contact-us-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* موبايل */
+        @media (max-width: 576px) {
+            .contact-us-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ================= FINAL CTA ================= */
+
+        .cta {
+            text-align: center;
+            background: black;
+            color: var(--primary);
+            padding: 100px 20px;
+        }
+
+        .cta h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #eee;
+        }
+
+        .cta h3 {
+            text-align: left;
+            font-size: 19px;
+            margin-left: 120px;
+            margin-bottom: 10px;
+        }
+
+        /* ================= ANIMATION ================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: 1s;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width:900px) {
+            .project-box {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo"><a href="#home">Nexora<span>Tech</span></a></div>
+
+        <!-- Nav Links -->
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        
+    </nav>
+
+    <!-- 1 HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-bg"></div>
+
+        <div class="container reveal">
+            <h1>We Build Digital Systems That Generate Growth</h1>
+            <p>We design, develop and optimize powerful websites that convert visitors into revenue.</p>
+            <a href="#services" class="btn btn-primary">Our Services</a>
+            <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- 2 ABOUT -->
+    <section id="about">
+        <div class="container reveal">
+
+            <h2 class="about-title">WHO ARE WE?</h2>
+
+            <div class="about-box">
+
+                <div class="about-text">
+                    <h3>Built for Performance.<br>
+                        Designed for Impact.</h3>
+                    <p>
+                        At NexoraTech, we build digital systems that don’t just look good — they perform.<br><br>
+
+                        We create high-converting websites, powerful eCommerce stores, and fully customized platforms
+                        designed to scale. By combining strategy, clean development, and precision design, we deliver
+                        measurable growth — more traffic, higher conversions, stronger brands.<br><br>
+
+                        We don’t just build websites.<br>
+                        We engineer digital growth.<br><br>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <h4> &nbsp; Performance Optimized</h4>
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-code"></i>
+                        <h4>Strategic Development</h4>
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h4> &nbsp; Growth Focused</h4>
+                    </div>
+
+                    </p>
+                </div>
+
+                <div class="about-image">
+                    <img src="team2.png" alt="Our Team">
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3 SERVICES -->
+
+    <section id="services">
+        <div class="container reveal">
+
+            <div class="service-title">
+                <h2>Our Services</h2>
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-box">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>Website Development</h3>
+                    <p>Custom-built business and corporate websites designed for performance, scalability, and long-term
+                        growth.</p>
+                </div>
+
+                <div class="service-box">
+                    <i class="fa-brands fa-wordpress"></i>
+                    <h3>Custom WordPress</h3>
+                    <p>Fully customized WordPress solutions tailored to your brand, without relying on generic themes.
+                    </p>
+                </div>
+
+                <div class="service-box">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>Landing Pages</h3>
+                    <p>High-converting landing pages built for marketing campaigns, lead generation, and paid ads.</p>
+                </div>
+
+                <div class="service-box">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    <h3>Website Redesign</h3>
+                    <p>Transform outdated websites into modern, fast, and conversion-focused digital platforms.</p>
+                </div>
+
+                <div class="service-box">
+                    <i class="fa-solid fa-pen-ruler"></i>
+                    <h3>UI / UX Design</h3>
+                    <p>Strategic user interface and experience design focused on clarity, usability, and engagement.</p>
+                </div>
+
+                <div class="service-box">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Figma to HTML</h3>
+                    <p>Pixel-perfect, responsive implementation from design files to clean, structured code.</p>
+                </div>
+
+                <div class="service-box">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>Responsive frontend</h3>
+                    <p>Mobile-first, fully responsive frontend development optimized for all devices and screen sizes.
+                    </p>
+                </div>
+
+                <div class="service-box">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <h3>Shopify & WooCommerce</h3>
+                    <p>Complete e-commerce store setup, customization, and optimization for growth and sales.</p>
+                </div>
+
+                <div class="service-box">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h3>Payment Integration</h3>
+                    <p>Secure and seamless payment gateway integration for smooth customer checkout experiences.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4 PORTFOLIO -->
+
+    <section id="portfolio">
+        <div class="container reveal">
+
+            <h2 class="portfolio-title">Case Studies</h2>
+
+            <div class="portfolio-box">
+
+                <div class="portfolio-text">
+                    <h3>1 - ASTERACTIVE</h3>
+                    <p>
+                        Engineering Infrastructure Corporate Website<br><br>
+
+                        Asteractive is a multidisciplinary engineering and infrastructure company delivering complex
+                        civil, electrical, and safety systems. The challenge was to transform a technically strong
+                        company into a digitally strong brand.<br><br>
+
+                        The previous structure did not fully reflect their scale, expertise, or
+                        international-standard
+                        positioning. We redesigned the digital experience to communicate authority, technical depth,
+                        and
+                        operational reliability.<br><br>
+
+                        We built a clean, structured corporate website that highlights their infrastructure
+                        projects,
+                        power systems, and safety solutions while maintaining clarity for decision-makers and
+                        stakeholders.<br><br>
+
+                        As a result, the company achieved stronger digital credibility, improved engagement time,
+                        and a
+                        noticeable increase in qualified inquiries after launch.<br><br>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-sitemap"></i>
+                        <h4>Structured Engineering Presentation</h4>
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-building-shield"></i>
+                        <h4>Authority-Driven Corporate Design</h4>
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h4>Performance & Engagement Optimization</h4>
+                    </div>
+
+                    <a href="https://www.asteractive.org" target="_blank" class="btn btn-outline">live site</a>
+                    </p>
+                </div>
+
+                <div class="portfolio-image">
+                    <img src="ASTERACTIVE.png" alt="ASTERACTIVE">
+                </div>
+
+            </div>
+
+            <div class="portfolio-box">
+
+                <div class="portfolio-text">
+                    <h3>2 - INTERACTIVE</h3>
+                    <p>
+                        Corporate Engineering Website<br><br>
+
+                        Interactive is a leading engineering solutions provider specializing in complex electrical,
+                        mechanical, and safety systems. The challenge was to present highly technical services in a
+                        clear, professional, and user-friendly manner.<br><br>
+
+                        We transformed their online presence by creating a structured, modern corporate website that
+                        highlights multi-disciplinary expertise while emphasizing safety, reliability, and compliance
+                        with international standards.<br><br>
+
+                        The redesigned platform improved visitor engagement, increased qualified inquiries, and
+                        positioned Interactive as a trusted partner for large-scale engineering projects.<br><br>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-project-diagram"></i>
+                        <h4>Clear Multi-Disciplinary Layout</h4>
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h4>Professional Corporate Branding</h4>
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-rocket"></i>
+                        <h4>Optimized Performance & Accessibility</h4>
+                    </div>
+
+                    <a href="https://interactivee.org/" target="_blank" class="btn btn-outline">live site</a>
+                    </p>
+                </div>
+
+                <div class="portfolio-image">
+                    <img src="INTERACTIVE.png" alt="INTERACTIVE">
+                </div>
+
+            </div>
+
+            <div class="portfolio-box">
+
+                <div class="portfolio-text">
+                    <h3>3 - ZERO X ONE</h3>
+                    <p>
+                        Project Type: Custom Store on Sellr<br><br>
+
+                        ZERO X ONE is a local fashion brand offering hoodies, sweatshirts, t-shirts, and jackets across
+                        multiple categories. The client wanted a sleek, modern online store that establishes a strong
+                        digital presence, builds trust, and increases sales.<br><br>
+
+                    <div class="results-section">
+                        <h4>challenges</h4>
+                    </div>
+
+                    1- Multiple product categories required an organized, user-friendly layout.<br>
+                    2- Client wanted a “premium” look that reflects quality and trustworthiness.<br>
+                    3- Needed to integrate product reviews and highlight key selling points (fast delivery, high
+                    quality, easy returns).<br><br>
+
+                    <div class="results-section">
+                        <h4>our solutions</h4>
+                    </div>
+
+                    Customized Sellr store according to the client’s preferred design and branding.<br>
+                    Built custom sections to showcase product categories and reviews, improving usability and trust.<br>
+                    Fast and lightweight website for optimal performance.<br>
+                    Optimized checkout and shopping experience to boost conversions.<br>
+                    Fully responsive design for mobile and desktop users.<br><br>
+
+                    <div class="results-section">
+                        <h4>Results</h4>
+                    </div>
+
+                    Increased site visits by ~45% in the first month.<br>
+                    Boosted online sales by ~35% through better navigation and trust indicators.<br>
+                    Strengthened brand image, making ZERO X ONE more competitive locally.<br><br>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-palette"></i>
+                        <h4> &nbsp; Custom Design & Branding</h4>
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-user-check"></i>
+                        <h4>Enhanced User Experience</h4>
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-rocket"></i>
+                        <h4> &nbsp; Performance & Mobile Optimization</h4>
+                    </div>
+
+                    <a href="https://zeroxone.site/" target="_blank" class="btn btn-outline">live site</a>
+                    </p>
+                </div>
+
+                <div class="portfolio-image">
+                    <img src="ZERO X ONE.png" alt="zero x one">
+                </div>
+
+            </div>
+            <div class="portfolio-box">
+
+                <div class="portfolio-text">
+                    <h3>4 - NOAIR </h3>
+                    <p>
+                        Project Type: Shopify Store<br><br>
+
+                        NOAIR is a local streetwear brand offering premium hoodies, custom embroidered items, and
+                        ready-to-wear designs. The client wanted a fully customized store that allows customers to
+                        Design Your Own hoodie or choose from curated ready-made collections, giving them flexibility
+                        and a unique shopping experience.<br><br>
+                    <div class="results-section">
+                        <h4>challenges</h4>
+                    </div>
+
+                    1- The client needed a custom coding solution for the “Design Your Own” section, which required high
+                    interactivity and responsiveness.<br>
+                    2- Ensuring fast performance and lightweight pages while handling many custom features.<br>
+                    3- Organizing multiple product categories and designs while maintaining a smooth user
+                    experience.<br><br>
+
+                    <div class="results-section">
+                        <h4>our solutions</h4>
+                    </div>
+                    Developed 90% of the website’s custom code, including the interactive “Design Your Own” section.<br>
+                    Optimized website performance to ensure fast loading times and smooth navigation.<br>
+                    Implemented intuitive navigation for both custom-designed and ready-to-buy products.<br>
+                    Enhanced mobile responsiveness and cross-browser compatibility.<br>
+                    Integrated product reviews and key brand selling points (quality, free shipping, comfort).<br><br>
+
+                    <div class="results-section">
+                        <h4>Results</h4>
+                    </div>
+
+                    Increased site visits by ~50% within the first month.<br>
+                    Boosted online sales by ~40% through improved UX and custom interactive features.<br>
+                    Strengthened NOAIR’s brand presence, making them more competitive and recognizable in the streetwear
+                    market.<br><br>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-paint-brush"></i>
+                        <h4>Custom Interactive Design Section</h4>
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-rocket"></i>
+                        <h4>Optimized Shopping Experience</h4>
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-mobile-alt"></i>
+                        <h4> &nbsp; Mobile & Responsive Ready</h4>
+                    </div>
+
+                    <a href="https://www.noair.store/" target="_blank" class="btn btn-outline">live site</a>
+                    </p>
+                </div>
+
+                <div class="portfolio-image">
+                    <img src="NOAIR.png" alt="NOAIR">
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+
+                <div class="portfolio-text">
+                    <h3>5 - Dr. Ahmed Nabil – Personal Brand Website </h3>
+                    <p>
+                        Project Type: Personal Brand / Clinic Website<br><br>
+
+                        This project was a training project designed to showcase advanced web development skills and
+                        create a functional demo for potential clients. The website represents Dr. Ahmed Nabil, a
+                        board-certified Internal Medicine specialist, and was designed to simulate a fully
+                        operational clinic website.<br><br>
+                    <div class="results-section">
+                        <h4>challenges</h4>
+                    </div>
+
+                    1- Creating an interactive and professional clinic website for demonstration purposes.<br>
+                    2- Implementing functional features like appointment booking, clinic information, and social media
+                    integration.<br>
+                    3- Ensuring the site is modern, responsive, and user-friendly for both desktop and mobile
+                    users.<br><br>
+
+                    <div class="results-section">
+                        <h4>our solutions</h4>
+                    </div>
+
+                    Developed a fully responsive HTML/CSS/JS website showcasing key clinic features.<br>
+                    Implemented Book Appointment functionality for patient convenience.<br>
+                    Added Clinic Information including services, location, and contact info.<br>
+                    Integrated social media feeds to show active engagement.<br>
+                    Designed interactive UI elements such as info boxes and service highlights.<br><br>
+
+                    <div class="results-section">
+                        <h4>Results</h4>
+                    </div>
+
+                    The site serves as a professional showcase of web development and UI/UX capabilities.<br>
+                    Demonstrates functional features that clients can request in real projects.<br>
+                    Highlights skills in creating fast, modern, and responsive websites suitable for healthcare
+                    brands.<br><br>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <h4> &nbsp; Appointment Booking</h4>
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-hospital-user"></i>
+                        <h4>Clinic Information</h4>
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fa-solid fa-mobile-alt"></i>
+                        <h4> &nbsp; Responsive & Modern Design</h4>
+                    </div>
+
+                    <a href="https://yousef-hegazi.github.io/Clinic/" target="_blank" class="btn btn-outline">live
+                        site</a>
+                    </p>
+                </div>
+
+                <div class="portfolio-image">
+                    <img src="DR.png" alt="DR. AHMED NABIL">
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5 WHY US -->
+    <section>
+        <div class="container reveal">
+
+            <div class="why-us-title">
+                <h2>WHY US</h2>
+            </div>
+
+            <div class="why-us-grid">
+
+                <div class="why-us-box">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>We Build for Growth</h3>
+                    <p>We design every project to increase traffic, conversions, and revenue.</p>
+                </div>
+
+                <div class="why-us-box">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>Code That Scales</h3>
+                    <p>Clean, optimized development built for speed and long-term expansion. </p>
+                </div>
+
+                <div class="why-us-box">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>Conversion-Focused Design</h3>
+                    <p>We structure user journeys that turn visitors into paying clients.</p>
+                </div>
+
+                <div class="why-us-box">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <h3>Speed Is a Priority</h3>
+                    <p>Fast-loading platforms that improve user experience and SEO.</p>
+                </div>
+
+                <div class="why-us-box">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Custom Over Templates</h3>
+                    <p>Tailored solutions built around your brand — no generic themes.</p>
+                </div>
+
+                <div class="why-us-box">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h3>Mobile-First Execution</h3>
+                    <p>Designed to perform flawlessly across all devices.</p>
+                </div>
+
+                <div class="why-us-box">
+                    <i class="fa-solid fa-chess"></i>
+                    <h3>Strategic Thinking</h3>
+                    <p>We align technology with clear business objectives.</p>
+                </div>
+
+                <div class="why-us-box">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h3>Built to Compete</h3>
+                    <p>Digital platforms that position you ahead of competitors.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6 INDUSTRIES -->
+    <section>
+        <div class="container reveal">
+
+            <div class="industries-title">
+                <h2>Industries We Serve</h2>
+            </div>
+
+            <div class="industries-grid">
+
+                <div class="industries-box">
+                    <i class="fa-solid fa-shirt"></i>
+                    <h3>Fashion & Apparel Brands</h3>
+                    <p>eCommerce stores – Local & growing fashion brands</p>
+                </div>
+
+                <div class="industries-box">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <h3>eCommerce & Retail</h3>
+                    <p>Product-based businesses scaling online sales</p>
+                </div>
+
+                <div class="industries-box">
+                    <i class="fa-solid fa-building"></i>
+                    <h3>Engineering & Construction</h3>
+                    <p>Corporate websites for infrastructure & technical companies</p>
+                </div>
+
+                <div class="industries-box">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <h3>Healthcare & Medical</h3>
+                    <p>Clinics, medical professionals, appointment-based systems</p>
+                </div>
+
+                <div class="industries-box">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h3>Startups & Entrepreneurs</h3>
+                    <p>MVPs, landing pages, digital-first brands</p>
+                </div>
+
+                <div class="industries-box">
+                    <i class="fa-solid fa-user"></i>
+                    <h3>Personal Brands</h3>
+                    <p>Coaches, consultants, content creators</p>
+                </div>
+
+                <div class="industries-box">
+                    <i class="fa-solid fa-palette"></i>
+                    <h3>Creative & Media</h3>
+                    <p>Studios, agencies, production companies</p>
+                </div>
+
+                <div class="industries-box">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <h3>Corporate & B2B Services</h3>
+                    <p>Professional service providers</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 7 TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container reveal">
+            <div class="container">
+
+                <h2 class="section-title">What Our Clients Say</h2>
+
+                <div class="testimonial-wrapper">
+
+                    <div class="testimonial-track" id="testimonialTrack">
+
+                        <div class="testimonial-box">
+                            <div class="user-icon"><i class="fa-solid fa-user"></i></div>
+                            <h3>Eng.Ehab</h3>
+                            <div class="stars">★★★★★</div>
+                            <p>NexoraTech delivered exactly what we needed — a digital presence that reflects our
+                                engineering standards.
+                                Professional, precise, and seamless to work with.</p>
+                        </div>
+
+                        <div class="testimonial-box">
+                            <div class="user-icon"><i class="fa-solid fa-user"></i></div>
+                            <h3>Sarah Ali</h3>
+                            <div class="stars">★★★★★</div>
+                            <p>Our store became faster, stronger, and more conversion-focused.
+                                NexoraTech helped us scale beyond expectations.</p>
+                        </div>
+
+                        <div class="testimonial-box">
+                            <div class="user-icon"><i class="fa-solid fa-user"></i></div>
+                            <h3>Eng.Ehab</h3>
+                            <div class="stars">★★★★★</div>
+                            <p>After our first successful collaboration, working with NexoraTech again was a clear
+                                choice.<br>
+                                They consistently deliver with reliability, structure, and technical depth.</p>
+                        </div>
+
+                        <div class="testimonial-box">
+                            <div class="user-icon"><i class="fa-solid fa-user"></i></div>
+                            <h3>Mona Hassan</h3>
+                            <div class="stars">★★★★★</div>
+                            <p>What NexoraTech built wasn’t just a store — it was a fully engineered digital product.
+                                From custom coding to performance optimization, the results exceeded our expectations.
+                            </p>
+                        </div>
+
+                        <div class="testimonial-box">
+                            <div class="user-icon"><i class="fa-solid fa-user"></i></div>
+                            <h3>Youssef Adel</h3>
+                            <div class="stars">★★★★★</div>
+                            <p>Highly professional and strategic execution.</p>
+                        </div>
+
+                        <div class="testimonial-box">
+                            <div class="user-icon"><i class="fa-solid fa-user"></i></div>
+                            <h3>Youssef Adel</h3>
+                            <div class="stars">★★★★★</div>
+                            <p>Highly professional and strategic execution.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button class="arrow left" id="prevBtn">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <button class="arrow right" id="nextBtn">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 8.5 CONTACT-2 -->
+    <section id="contact">
+        <div class="container reveal">
+            <div class="contact-us-title">
+                <h2>Contact Us</h2>
+            </div>
+
+            <div class="contact-us-grid">
+
+                <div class="contact-us-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>yousefhegazi489@gmail.com</p>
+                </div>
+
+                <div class="contact-us-box">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <h3>Chat On WhatsApp</h3>
+                    <p>01229851557</p>
+                </div>
+
+                <div class="contact-us-box">
+                    <i class="fa-solid fa-phone"></i>
+                    <h3>Call Sales</h3>
+                    <p>01101660080</p>
+                </div>
+
+                <div class="contact-us-box">
+                    <i class="fa-solid fa-headset"></i>
+                    <h3>Call Support</h3>
+                    <p>01229851557</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 8 CONTACT -->
+    <section class="contact-box">
+        <div class="contact-container reveal">
+            <h2>Let’s Build Something That Drives Results</h2>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <a href="" target="_blank" class="btn btn-primary">Send Message</a>
+            </form>
+        </div>
+    </section>
+
+
+
+    <!-- 9 FINAL CTA -->
+    <section class="cta">
+        <div class="container reveal">
+            <h2>Ready to Scale Your Digital Presence?<br> ""م جاهز كلو بردو""</h2>
+            <p>We don’t just build websites — we engineer digital growth.<br>
+                Let’s create a high-performing platform that drives traffic, converts visitors, and strengthens your
+                brand authority.</p>
+            <a href="#contact" class="btn btn-primary">Start Your Project</a>
+            <a href="#portfolio" class="btn btn-outline">View Our Work</a>
+            <h3>📞 01229851557</h3>
+            <h3>📧 yousefhegazi489@gmail.com</h3>
+        </div>
+    </section>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle("dark");
+        }
+
+        const reveals = document.querySelectorAll(".reveal");
+
+        function activateReveal() {
+            reveals.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", activateReveal);
+        window.addEventListener("load", activateReveal);
+
+        const track = document.getElementById("testimonialTrack");
+        let boxes = document.querySelectorAll(".testimonial-box");
+        const nextBtn = document.getElementById("nextBtn");
+        const prevBtn = document.getElementById("prevBtn");
+
+        let visible = 3;
+        let index = visible;
+        let autoSlide;
+
+        // تحديد عدد البوكسات حسب الشاشة
+        function getVisibleCount() {
+            if (window.innerWidth < 600) return 1;
+            if (window.innerWidth < 992) return 2;
+            return 3;
+        }
+
+        function setupClones() {
+            visible = getVisibleCount();
+            boxes = document.querySelectorAll(".testimonial-box");
+
+            const firstClones = [];
+            const lastClones = [];
+
+            for (let i = 0; i < visible; i++) {
+                firstClones.push(boxes[i].cloneNode(true));
+                lastClones.push(boxes[boxes.length - 1 - i].cloneNode(true));
+            }
+
+            lastClones.reverse().forEach(clone => {
+                clone.classList.add("clone");
+                track.prepend(clone);
+            });
+
+            firstClones.forEach(clone => {
+                clone.classList.add("clone");
+                track.append(clone);
+            });
+
+            boxes = document.querySelectorAll(".testimonial-box");
+            index = visible;
+            updateSlide(false);
+        }
+
+        function updateSlide(animate = true) {
+            const boxWidth = boxes[0].offsetWidth + 30;
+            if (!animate) track.style.transition = "none";
+            else track.style.transition = "transform .5s ease";
+
+            track.style.transform = `translateX(-${index * boxWidth}px)`;
+        }
+
+        function nextSlide() {
+            index++;
+            updateSlide();
+        }
+
+        function prevSlide() {
+            index--;
+            updateSlide();
+        }
+
+        track.addEventListener("transitionend", () => {
+            if (index >= boxes.length - visible) {
+                index = visible;
+                updateSlide(false);
+            }
+            if (index < visible) {
+                index = boxes.length - visible * 2;
+                updateSlide(false);
+            }
+        });
+
+        nextBtn.addEventListener("click", nextSlide);
+        prevBtn.addEventListener("click", prevSlide);
+
+        function startAuto() {
+            autoSlide = setInterval(nextSlide, 4000);
+        }
+
+        function stopAuto() {
+            clearInterval(autoSlide);
+        }
+
+        startAuto();
+
+        track.addEventListener("mouseenter", stopAuto);
+        track.addEventListener("mouseleave", startAuto);
+
+        let startX = 0;
+
+        track.addEventListener("touchstart", e => {
+            startX = e.touches[0].clientX;
+        });
+
+        track.addEventListener("touchend", e => {
+            let endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) nextSlide();
+            if (endX - startX > 50) prevSlide();
+        });
+
+        window.addEventListener("load", setupClones);
+        window.addEventListener("resize", () => {
+            location.reload();
+        });
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // يمنع window click من اغلاق الفوراً
+            navLinks.classList.toggle("active");
+        });
+
+        // اضغط برا القايمة -> تغلق
+        window.addEventListener("click", function (e) {
+            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                navLinks.classList.remove("active");
+            }
+        });
+
+        // اضغط على أي لينك -> تغلق
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
