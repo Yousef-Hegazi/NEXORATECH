@@ -164,20 +164,6 @@
             overflow: hidden;
         }
 
-        /* زرار اللغة */
-        .lang-wrapper {
-            position: relative;
-        }
-
-        .lang-btn {
-            background: none;
-            border: none;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            color: inherit;
-        }
-
         /* Dropdown */
         .lang-dropdown {
             position: absolute;
@@ -194,7 +180,24 @@
             z-index: 1000;
         }
 
-        .lang-dropdown.active {
+        /* =============== NEW =============== */
+
+        .lang-modal {
+            position: fixed;
+            top: 80px;
+            right: 40px;
+            background: #fff;
+            width: 200px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: .3s ease;
+            z-index: 1100;
+        }
+
+        .lang-modal.active {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
@@ -203,13 +206,36 @@
         .lang-option {
             padding: 14px 18px;
             cursor: pointer;
-            font-weight: 500;
             transition: .2s;
         }
 
         .lang-option:hover {
             background: #f3f3f3;
         }
+
+        .lang-btn-modern {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+
+        .lang-btn-modern:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+        }
+
+        /**/
 
         /* موبايل */
         @media (max-width: 992px) {
@@ -1218,10 +1244,11 @@
         }
 
         .footer h3 {
-            color : #fff;
+            color: #fff;
             margin-top: 14px;
             font-size: 26px;
         }
+
         .footer h4 {
             color: var(--primary);
             font-size: 22px;
@@ -1326,12 +1353,24 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
 
+        <a href="javascript:void(0)" class="lang-btn-modern" id="langToggle">
+            <i class="fa-solid fa-globe"></i>
+            <span>Language</span>
+        </a>
+
         <!-- Hamburger Menu -->
         <div class="menu-toggle" id="menuToggle">
             <i class="fa-solid fa-bars"></i>
         </div>
 
     </nav>
+
+    <div class="lang-modal" id="langModal">
+        <div class="lang-option" data-lang="en">🇬🇧 English</div>
+        <div class="lang-option" data-lang="ar">🇪🇬 العربية</div>
+    </div>
+
+    </div>
 
     <!-- 1 HERO -->
     <section class="hero" id="home">
@@ -2215,9 +2254,25 @@
             });
         });
 
+        //============= NEW =============//
+
+        const langToggle = document.getElementById("langToggle");
+        const langModal = document.getElementById("langModal");
+
+        langToggle.addEventListener("click", function (e) {
+            e.stopPropagation();
+            langModal.classList.toggle("active");
+        });
+
+        // يقفل لو ضغطت برا
+        window.addEventListener("click", function (e) {
+            if (!langModal.contains(e.target) && !langToggle.contains(e.target)) {
+                langModal.classList.remove("active");
+            }
+        });
+
     </script>
 
 </body>
 
 </html>
-
