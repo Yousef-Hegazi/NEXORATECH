@@ -1144,33 +1144,133 @@
             }
         }
 
-        /* ================= FINAL CTA ================= */
+        /* ====================  CTA  =================== */
 
-        .cta {
+        .cta-section {
+            padding: 80px 20px;
             text-align: center;
-            background: rgb(248, 248, 248);
-            color: var(--primary);
-            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--primary), #6c63ff);
+            color: #fff;
         }
 
-        .cta h2 {
-            text-align: center;
-            font-size: 40px;
-            margin-bottom: 20px;
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
         }
 
-        .cta p {
-            text-align: center;
+        .cta-section p {
             font-size: 18px;
+            opacity: 0.9;
             margin-bottom: 30px;
-            color: #000000;
         }
 
-        .cta h3 {
-            text-align: left;
-            font-size: 19px;
-            margin-left: 120px;
-            margin-bottom: 10px;
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn-light {
+            background: #fff;
+            color: var(--primary);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .btn-light:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline-1 {
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .btn-outline-1:hover {
+            background: #fff;
+            color: var(--primary);
+        }
+
+        /* =================== FOOTER ================== */
+
+        .footer {
+            background: #111;
+            color: #ccc;
+            padding-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            padding: 0 20px 40px;
+        }
+        
+        .footer h3{
+            margin-top: 14px;
+        }
+
+        .footer h3,
+        .footer h4 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .footer h3 span {
+            color: var(--primary);
+        }
+
+        .footer p {
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 6px;
+        }
+
+        .footer ul li a {
+            text-decoration: none;
+            color: #ccc;
+            transition: .3s;
+        }
+
+        .footer ul li a:hover {
+            color: #fff;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 12px;
+            font-size: 18px;
+            color: #ccc;
+            transition: .3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            font-size: 14px;
         }
 
         /* ================= ANIMATION ================= */
@@ -1905,21 +2005,60 @@
         </div>
     </section>
 
-
-
-    <!-- 9 FINAL CTA -->
-    <section class="cta">
+    <!-- 9 CTA -->
+    <section class="cta-section ">
         <div class="container reveal">
-            <h2>Ready to Scale Your Digital Presence?<br> ""م جاهز كلو بردو""</h2>
-            <p>We don’t just build websites — we engineer digital growth.<br>
-                Let’s create a high-performing platform that drives traffic, converts visitors, and strengthens your
-                brand authority.</p>
-            <a href="#contact" class="btn btn-primary">Start Your Project</a>
-            <a href="#portfolio" class="btn btn-outline">View Our Work</a>
-            <h3>📞 01229851557</h3>
-            <h3>📧 yousefhegazi489@gmail.com</h3>
+            <h2>Ready to Elevate Your Business?</h2>
+            <p>Let NexoraTech help you build powerful digital solutions that grow your brand.</p>
+
+            <div class="cta-buttons">
+                <a href="#appointment" class="btn btn-light">Get Started</a>
+                <a href="#contact" class="btn btn-outline-1">Contact Us</a>
+            </div>
         </div>
     </section>
+
+    <!-- 10 Footer -->
+    <footer class="footer">
+        <div class="container footer-grid reveal">
+
+            <div class="footer-about">
+                <h3>Nexora<span>Tech</span></h3>
+                <p>We create modern digital solutions to help your business grow and succeed online.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Email: yousefhegazi489@gmail.com</p>
+                <p>Phone: +20 122 985 1557</p>
+            </div>
+
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 NexoraTech. All Rights Reserved.
+        </div>
+    </footer>
 
     <script>
         function toggleMode() {
@@ -2069,7 +2208,7 @@
             });
         });
 
-    </script> آ
+    </script>
 
 </body>
 
