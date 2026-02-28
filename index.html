@@ -99,7 +99,7 @@
             padding: 0;
             z-index: 1001;
         }
-        
+
 
         /* شكل اللينك */
         nav ul li a {
@@ -153,6 +153,12 @@
             transition: .3s ease;
             z-index: 900;
         }
+
+        .overlay.no-blur {
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
 
         .overlay.active {
             opacity: 1;
@@ -245,6 +251,7 @@
             }
 
         }
+
         /* موبايل */
         @media (max-width: 992px) {
             .menu-toggle {
@@ -2282,28 +2289,26 @@
         const menuToggle = document.getElementById("menuToggle");
         const navLinks = document.querySelector(".nav-links");
         const overlay = document.getElementById("overlay");
+
         menuToggle.addEventListener("click", function (e) {
             e.stopPropagation();
 
-            navLinks.classList.toggle("active");
-            overlay.classList.toggle("active");
-            document.body.classList.toggle("menu-open");
-        });
+            const isOpen = navLinks.classList.contains("active");
 
-        // اضغط على overlay يقفل كل حاجة
-        overlay.addEventListener("click", function () {
-            navLinks.classList.remove("active");
-            overlay.classList.remove("active");
-            document.body.classList.remove("menu-open");
-        });
-
-        // اضغط على أي لينك يقفل
-        document.querySelectorAll(".nav-links a").forEach(link => {
-            link.addEventListener("click", () => {
+            if (isOpen) {
                 navLinks.classList.remove("active");
                 overlay.classList.remove("active");
+                overlay.classList.remove("no-blur");
                 document.body.classList.remove("menu-open");
-            });
+            } else {
+                // اقفل اللغة لو مفتوحة
+                langModal.classList.remove("active");
+
+                navLinks.classList.add("active");
+                overlay.classList.add("active");
+                overlay.classList.remove("no-blur"); // المنيو فيها blur
+                document.body.classList.add("menu-open");
+            }
         });
 
         //============= NEW =============//
@@ -2313,14 +2318,42 @@
 
         langToggle.addEventListener("click", function (e) {
             e.stopPropagation();
-            langModal.classList.toggle("active");
+
+            const isOpen = langModal.classList.contains("active");
+
+            if (isOpen) {
+                // لو مفتوحة → اقفلها
+                langModal.classList.remove("active");
+                overlay.classList.remove("active");
+                overlay.classList.remove("no-blur");
+                document.body.classList.remove("menu-open");
+            } else {
+                // اقفل المنيو لو مفتوحة
+                navLinks.classList.remove("active");
+
+                // افتح اللغة
+                langModal.classList.add("active");
+                overlay.classList.add("active");
+                overlay.classList.add("no-blur"); // مهم
+                document.body.classList.add("menu-open");
+            }
         });
 
-        // يقفل لو ضغطت برا
-        window.addEventListener("click", function (e) {
-            if (!langModal.contains(e.target) && !langToggle.contains(e.target)) {
-                langModal.classList.remove("active");
-            }
+        // قفل المنيو واللغة لما تضغط على overlay
+        overlay.addEventListener("click", function () {
+
+            // اقفل المنيو
+            navLinks.classList.remove("active");
+
+            // اقفل اللغة
+            langModal.classList.remove("active");
+
+            // اقفل overlay
+            overlay.classList.remove("active");
+            overlay.classList.remove("no-blur");
+
+            // رجع السكرول
+            document.body.classList.remove("menu-open");
         });
 
     </script>
