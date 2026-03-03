@@ -13,12 +13,6 @@
     <style>
         /* ================= ROOT ================= */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
             --primary: #c6a85c;
             --light: #ffffff;
@@ -71,6 +65,7 @@
             width: 100%;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             padding: 12px 120px;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -84,7 +79,6 @@
             font-size: 30px;
             font-weight: 800;
             letter-spacing: -1px;
-            flex-shrink: 0;
         }
 
         .logo a {
@@ -101,8 +95,8 @@
             display: flex;
             gap: 35px;
             list-style: none;
+            margin-right: -320px;
             padding: 0;
-            margin: 0 auto;
             z-index: 1001;
         }
 
@@ -139,6 +133,7 @@
         .menu-toggle {
             display: none;
             font-size: 24px;
+            margin-right: -20px;
             cursor: pointer;
             color: var(--primary);
         }
@@ -227,8 +222,9 @@
         .lang-btn-modern {
             display: inline-flex;
             align-items: center;
+            margin-right: 180px;
             gap: 8px;
-            padding: 8px 18px;
+            padding: 6px 16px;
             border-radius: 50px;
             border: 2px solid var(--primary);
             color: var(--primary);
@@ -248,28 +244,74 @@
 
         /**/
 
-        /* موبايل */
 
-        @media (max-width: 1050px) {
+        @media (max-width: 1300px) {
+            nav ul {
+                margin-right: -50px;
+            }
+
+        }
+
+        /* موبايل */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+                position: relative;
+                right: 200px;
+            }
+
+            nav {
+                padding: 12px 110px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                margin: 10px;
+                background: white;
+                text-align: center;
+                max-width: 79%;
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                gap: 20px;
+                padding: 40px 0;
+                border-radius: 12px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, .1);
+                display: none;
+                z-index: 1001;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .lang-btn-modern {
+                margin-right: -140px;
+            }
+
+        }
+
+        @media (max-width: 900px) {
             .menu-toggle {
                 display: block;
                 font-size: 24px;
                 cursor: pointer;
                 position: relative;
                 right: 80px;
-                order: 3;
             }
 
             .logo {
                 font-size: 26px;
-                order: 1;
+                margin-left: 25px;
             }
 
             nav {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 14px 110px;
+                padding: 2px 110px;
             }
 
             .nav-links {
@@ -279,8 +321,8 @@
                 background: white;
                 text-align: center;
                 margin: 10px;
-                max-width: 100%;
-                width: 95%;
+                max-width: 93%;
+                width: 100%;
                 height: auto;
                 flex-direction: column;
                 gap: 20px;
@@ -297,7 +339,129 @@
             }
 
             .lang-btn-modern {
-                order: 2;
+                margin-right: -320px;
+            }
+
+        }
+
+        @media (max-width: 860px) {
+            .lang-btn-modern {
+                margin-right: -260px;
+            }
+
+        }
+
+        @media (max-width: 840px) {
+            .lang-btn-modern {
+                margin-right: -250px;
+            }
+
+        }
+
+        @media (max-width: 800px) {
+            .lang-btn-modern {
+                margin-right: -180px;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+            .menu-toggle {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+                position: relative;
+                right: 80px;
+            }
+
+            .logo {
+                font-size: 26px;
+                margin-left: 25px;
+            }
+
+            nav {
+                padding: 2px 110px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                background: white;
+                text-align: center;
+                margin: 10px;
+                max-width: 90.5%;
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px 0;
+                border-radius: 12px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, .1);
+                display: none;
+                z-index: 1001;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .lang-btn-modern {
+                margin-right: -120px;
+            }
+
+        }
+
+        @media (max-width: 635px) {
+            .lang-btn-modern {
+                margin-left: -110px;
+            }
+        }
+
+
+        @media (max-width: 530px) {
+            .menu-toggle {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+                position: relative;
+                right: 80px;
+            }
+
+            .logo {
+                font-size: 26px;
+                margin-left: 2px;
+            }
+
+            nav {
+                padding: 2px 110px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                background: white;
+                margin: 10px;
+                max-width: 79%;
+                width: 100%;
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, .1);
+                display: none;
+                z-index: 1001;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .lang-btn-modern {
+                margin-right: -18px;
             }
 
         }
@@ -305,11 +469,11 @@
         /* ================= HERO ================= */
 
         .hero {
-            height: 100vh;
+            height: 67vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: start;
+            text-align: left;
             background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
                 url("team1.png") center/cover no-repeat;
             color: #fff;
@@ -335,7 +499,7 @@
             font-weight: 600;
             text-decoration: none;
             display: inline-block;
-            margin-inline-end: 15px;
+            margin-right: 15px;
             margin-top: 25px;
             transition: .3s;
         }
@@ -413,16 +577,8 @@
             padding: 100px 0;
         }
 
-        #aboutsubtitle {
-            white-space: pre-line;
-        }
-
-        #aboutdescription {
-            white-space: pre-line;
-        }
-
         .about-title {
-            text-align: start;
+            text-align: left;
             font-size: 35px;
             margin-bottom: 18px;
             color: var(--primary);
@@ -470,28 +626,12 @@
 
         .feature-box {
             display: flex;
-            margin-bottom: 10px;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
             /* مسافة بين الأيقونة والكلام */
         }
-
-        .feature-box-1 {
-            display: flex;
-            margin-bottom: 10px;
-            align-items: center;
-            gap: 19px;
-            /* مسافة بين الأيقونة والكلام */
-        }
-
 
         .feature-box i {
-            font-size: 25px;
-            color: var(--primary);
-            /* غير اللون براحتك */
-        }
-
-        .feature-box-1 i {
             font-size: 25px;
             color: var(--primary);
             /* غير اللون براحتك */
@@ -568,7 +708,7 @@
         }
 
         .service-title h2 {
-            text-align: start;
+            text-align: left;
             font-size: 40px;
             margin-bottom: 5px;
             color: var(--primary);
@@ -591,12 +731,8 @@
             padding: 100px 0;
         }
 
-        #pp1 {
-            white-space: pre-line;
-        }
-
         .portfolio-title {
-            text-align: start;
+            text-align: left;
             font-size: 35px;
             margin-bottom: 18px;
             color: var(--primary);
@@ -626,8 +762,8 @@
 
         .portfolio-text p {
             font-size: 18px;
-            line-height: 1.5;
-            color: #151515;
+            line-height: 1.7;
+            color: #555;
         }
 
         /* الصورة */
@@ -825,7 +961,7 @@
         }
 
         .industries-title h2 {
-            text-align: start;
+            text-align: left;
             font-size: 40px;
             margin-top: -20px;
             margin-bottom: 60px;
@@ -1052,7 +1188,7 @@
         }
 
         .contact-us-title h2 {
-            text-align: start;
+            text-align: left;
             font-size: 40px;
             margin-top: -10px;
             margin-bottom: 5px;
@@ -1258,22 +1394,6 @@
                 padding: 20px;
             }
         }
-
-        body.rtl {
-            direction: rtl;
-        }
-
-        body.rtl nav {
-            flex-direction: row-reverse;
-        }
-
-        body.rtl .nav-links {
-            flex-direction: row-reverse;
-        }
-
-        body.rtl .cta-buttons {
-            flex-direction: row-reverse;
-        }
     </style>
 </head>
 
@@ -1285,16 +1405,16 @@
 
         <!-- Nav Links -->
         <ul class="nav-links">
-            <li><a href="#home" data-key="home">Home</a></li>
-            <li><a href="#about" data-key="about">About</a></li>
-            <li><a href="#services" data-key="services">Services</a></li>
-            <li><a href="#portfolio" data-key="portfolio">Portfolio</a></li>
-            <li><a href="#contact" data-key="contact">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
 
         <a href="javascript:void(0)" class="lang-btn-modern" id="langToggle">
             <i class="fa-solid fa-globe"></i>
-            <span data-key="language">Language</span>
+            <span>Language</span>
         </a>
 
         <!-- Hamburger Menu -->
@@ -1317,11 +1437,10 @@
         <div class="hero-bg"></div>
 
         <div class="container reveal">
-            <h1 data-key="herotitle">We Build Digital Systems That Generate Growth</h1>
-            <p data-key="herodescription">We design, develop and optimize powerful websites that convert visitors into
-                revenue.</p>
-            <a href="#services" data-key="homeourservices" class="btn btn-primary">Our Services</a>
-            <a href="#contact" data-key="contactus" class="btn btn-outline">Contact Us</a>
+            <h1>We Build Digital Systems That Generate Growth</h1>
+            <p>We design, develop and optimize powerful websites that convert visitors into revenue.</p>
+            <a href="#services" class="btn btn-primary">Our Services</a>
+            <a href="#contact" class="btn btn-outline">Contact Us</a>
         </div>
     </section>
 
@@ -1329,14 +1448,14 @@
     <section id="about">
         <div class="container reveal">
 
-            <h2 class="about-title" data-key="abouttitle">WHO ARE WE?</h2>
+            <h2 class="about-title">WHO ARE WE?</h2>
 
             <div class="about-box">
 
                 <div class="about-text">
-                    <h3 id="aboutsubtitle" data-key="aboutsubtitle">Built for Performance.<br>
+                    <h3>Built for Performance.<br>
                         Designed for Impact.</h3>
-                    <p id="aboutdescription" data-key="aboutdescription">
+                    <p>
                         At NexoraTech, we build digital systems that don’t just look good — they perform.<br><br>
 
                         We create high-converting websites, powerful eCommerce stores, and fully customized platforms
@@ -1346,19 +1465,19 @@
                         We don’t just build websites.<br>
                         We engineer digital growth.<br><br>
 
-                    <div class="feature-box-1">
+                    <div class="feature-box">
                         <i class="fa-solid fa-gauge-high"></i>
-                        <h4 data-key="feature1"> &nbsp; Performance Optimized</h4>
+                        <h4> &nbsp; Performance Optimized</h4>
                     </div>
 
                     <div class="feature-box">
                         <i class="fa-solid fa-code"></i>
-                        <h4 data-key="feature2">Strategic Development</h4>
+                        <h4>Strategic Development</h4>
                     </div>
 
-                    <div class="feature-box-1">
+                    <div class="feature-box">
                         <i class="fa-solid fa-chart-line"></i>
-                        <h4 data-key="feature3"> &nbsp; Growth Focused</h4>
+                        <h4> &nbsp; Growth Focused</h4>
                     </div>
 
                     </p>
@@ -1379,75 +1498,66 @@
         <div class="container reveal">
 
             <div class="service-title">
-                <h2 data-key="services">Our Services</h2>
+                <h2>Our Services</h2>
             </div>
 
             <div class="services-grid">
 
                 <div class="service-box">
                     <i class="fa-solid fa-laptop-code"></i>
-                    <h3 data-key="sh1">Website Development</h3>
-                    <p data-key="sh1desc">Custom-built business and corporate websites designed for performance,
-                        scalability, and long-term
+                    <h3>Website Development</h3>
+                    <p>Custom-built business and corporate websites designed for performance, scalability, and long-term
                         growth.</p>
                 </div>
 
                 <div class="service-box">
                     <i class="fa-brands fa-wordpress"></i>
-                    <h3 data-key="sh2">Custom WordPress</h3>
-                    <p data-key="sh2desc">Fully customized WordPress solutions tailored to your brand, without relying
-                        on generic themes.
+                    <h3>Custom WordPress</h3>
+                    <p>Fully customized WordPress solutions tailored to your brand, without relying on generic themes.
                     </p>
                 </div>
 
                 <div class="service-box">
                     <i class="fa-solid fa-bullseye"></i>
-                    <h3 data-key="sh3">Landing Pages</h3>
-                    <p data-key="sh3desc">High-converting landing pages built for marketing campaigns, lead generation,
-                        and paid ads.</p>
+                    <h3>Landing Pages</h3>
+                    <p>High-converting landing pages built for marketing campaigns, lead generation, and paid ads.</p>
                 </div>
 
                 <div class="service-box">
                     <i class="fa-solid fa-arrows-rotate"></i>
-                    <h3 data-key="sh4">Website Redesign</h3>
-                    <p data-key="sh4desc">Transform outdated websites into modern, fast, and conversion-focused digital
-                        platforms.</p>
+                    <h3>Website Redesign</h3>
+                    <p>Transform outdated websites into modern, fast, and conversion-focused digital platforms.</p>
                 </div>
 
                 <div class="service-box">
                     <i class="fa-solid fa-pen-ruler"></i>
-                    <h3 data-key="sh5">UI / UX Design</h3>
-                    <p data-key="sh5desc">Strategic user interface and experience design focused on clarity, usability,
-                        and engagement.</p>
+                    <h3>UI / UX Design</h3>
+                    <p>Strategic user interface and experience design focused on clarity, usability, and engagement.</p>
                 </div>
 
                 <div class="service-box">
                     <i class="fa-solid fa-code"></i>
-                    <h3 data-key="sh6">Figma to HTML</h3>
-                    <p data-key="sh6desc">Pixel-perfect, responsive implementation from design files to clean,
-                        structured code.</p>
+                    <h3>Figma to HTML</h3>
+                    <p>Pixel-perfect, responsive implementation from design files to clean, structured code.</p>
                 </div>
 
                 <div class="service-box">
                     <i class="fa-solid fa-globe"></i>
-                    <h3 data-key="sh7">Responsive frontend</h3>
-                    <p data-key="sh7desc">Mobile-first, fully responsive frontend development optimized for all devices
-                        and screen sizes.
+                    <h3>Responsive frontend</h3>
+                    <p>Mobile-first, fully responsive frontend development optimized for all devices and screen sizes.
                     </p>
                 </div>
 
                 <div class="service-box">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <h3 data-key="sh8">Shopify & WooCommerce</h3>
-                    <p data-key="sh8desc">Complete e-commerce store setup, customization, and optimization for growth
-                        and sales.</p>
+                    <h3>Shopify & WooCommerce</h3>
+                    <p>Complete e-commerce store setup, customization, and optimization for growth and sales.</p>
                 </div>
 
                 <div class="service-box">
                     <i class="fa-solid fa-rocket"></i>
-                    <h3 data-key="sh9">Payment Integration</h3>
-                    <p data-key="sh9desc">Secure and seamless payment gateway integration for smooth customer checkout
-                        experiences.</p>
+                    <h3>Payment Integration</h3>
+                    <p>Secure and seamless payment gateway integration for smooth customer checkout experiences.</p>
                 </div>
             </div>
 
@@ -1459,13 +1569,13 @@
     <section id="portfolio">
         <div class="container reveal">
 
-            <h2 class="portfolio-title" data-key="pt">Client Projects</h2>
+            <h2 class="portfolio-title">Case Studies</h2>
 
             <div class="portfolio-box">
 
                 <div class="portfolio-text">
-                    <h3 data-key="ph1">1 - ASTERACTIVE</h3>
-                    <p id="pp1" data-key="pp1">
+                    <h3>1 - ASTERACTIVE</h3>
+                    <p>
                         Engineering Infrastructure Corporate Website<br><br>
 
                         Asteractive is a multidisciplinary engineering and infrastructure company delivering complex
@@ -1489,21 +1599,20 @@
 
                     <div class="feature-box">
                         <i class="fa-solid fa-sitemap"></i>
-                        <h4 data-key="pf1">Structured Engineering Presentation</h4>
+                        <h4>Structured Engineering Presentation</h4>
                     </div>
 
                     <div class="feature-box">
                         <i class="fa-solid fa-building-shield"></i>
-                        <h4 data-key="pf2">Authority-Driven Corporate Design</h4>
+                        <h4>Authority-Driven Corporate Design</h4>
                     </div>
 
                     <div class="feature-box">
                         <i class="fa-solid fa-chart-line"></i>
-                        <h4 data-key="pf3">Performance & Engagement Optimization</h4>
+                        <h4>Performance & Engagement Optimization</h4>
                     </div>
 
-                    <a href="https://www.asteractive.org" target="_blank" class="btn btn-outline" data-key="pl1">View
-                        Live Site</a>
+                    <a href="https://www.asteractive.org" target="_blank" class="btn btn-outline">live site</a>
                     </p>
                 </div>
 
@@ -1516,8 +1625,8 @@
             <div class="portfolio-box">
 
                 <div class="portfolio-text">
-                    <h3 data-key="ph2">2 - INTERACTIVE</h3>
-                    <p id="pp1" data-key="pp2">
+                    <h3>2 - INTERACTIVE</h3>
+                    <p>
                         Corporate Engineering Website<br><br>
 
                         Interactive is a leading engineering solutions provider specializing in complex electrical,
@@ -1533,21 +1642,20 @@
 
                     <div class="feature-box">
                         <i class="fa-solid fa-project-diagram"></i>
-                        <h4 data-key="pf4">Clear Multi-Disciplinary Layout</h4>
+                        <h4>Clear Multi-Disciplinary Layout</h4>
                     </div>
 
                     <div class="feature-box">
                         <i class="fa-solid fa-shield-halved"></i>
-                        <h4 data-key="pf5">Professional Corporate Branding</h4>
+                        <h4>Professional Corporate Branding</h4>
                     </div>
 
                     <div class="feature-box">
                         <i class="fa-solid fa-rocket"></i>
-                        <h4 data-key="pf6">Optimized Performance & Accessibility</h4>
+                        <h4>Optimized Performance & Accessibility</h4>
                     </div>
 
-                    <a href="https://interactivee.org/" target="_blank" class="btn btn-outline" data-key="pl2">View Live
-                        Site</a>
+                    <a href="https://interactivee.org/" target="_blank" class="btn btn-outline">live site</a>
                     </p>
                 </div>
 
@@ -1560,65 +1668,57 @@
             <div class="portfolio-box">
 
                 <div class="portfolio-text">
-                    <h3 data-key="ph3">3 - ZERO X ONE</h3>
-                    <p id="pp1" data-key="pp31">
+                    <h3>3 - ZERO X ONE</h3>
+                    <p>
                         Project Type: Custom Store on Sellr<br><br>
 
                         ZERO X ONE is a local fashion brand offering hoodies, sweatshirts, t-shirts, and jackets across
                         multiple categories. The client wanted a sleek, modern online store that establishes a strong
                         digital presence, builds trust, and increases sales.<br><br>
-                    </p>
-                    <div class="results-section">
-                        <h4 data-key="pp32">challenges</h4>
-                    </div>
-
-                    <p id="pp1" data-key="pp33">
-                        1- Multiple product categories required an organized, user-friendly layout.<br>
-                        2- Client wanted a “premium” look that reflects quality and trustworthiness.<br>
-                        3- Needed to integrate product reviews and highlight key selling points (fast delivery, high
-                        quality, easy returns).<br><br>
-                    </p>
 
                     <div class="results-section">
-                        <h4 data-key="pp34">our solutions</h4>
+                        <h4>challenges</h4>
                     </div>
 
-                    <p id="pp1" data-key="pp35">
-                        Customized Sellr store according to the client’s preferred design and branding.<br>
-                        Built custom sections to showcase product categories and reviews, improving usability and
-                        trust.<br>
-                        Fast and lightweight website for optimal performance.<br>
-                        Optimized checkout and shopping experience to boost conversions.<br>
-                        Fully responsive design for mobile and desktop users.<br><br>
-                    </p>
+                    1- Multiple product categories required an organized, user-friendly layout.<br>
+                    2- Client wanted a “premium” look that reflects quality and trustworthiness.<br>
+                    3- Needed to integrate product reviews and highlight key selling points (fast delivery, high
+                    quality, easy returns).<br><br>
 
                     <div class="results-section">
-                        <h4 data-key="pp36">Results</h4>
+                        <h4>our solutions</h4>
                     </div>
 
-                    <p id="pp1" data-key="pp37">
-                        Increased site visits by ~45% in the first month.<br>
-                        Boosted online sales by ~35% through better navigation and trust indicators.<br>
-                        Strengthened brand image, making ZERO X ONE more competitive locally.<br><br>
-                    </p>
+                    Customized Sellr store according to the client’s preferred design and branding.<br>
+                    Built custom sections to showcase product categories and reviews, improving usability and trust.<br>
+                    Fast and lightweight website for optimal performance.<br>
+                    Optimized checkout and shopping experience to boost conversions.<br>
+                    Fully responsive design for mobile and desktop users.<br><br>
 
-                    <div class="feature-box-1">
+                    <div class="results-section">
+                        <h4>Results</h4>
+                    </div>
+
+                    Increased site visits by ~45% in the first month.<br>
+                    Boosted online sales by ~35% through better navigation and trust indicators.<br>
+                    Strengthened brand image, making ZERO X ONE more competitive locally.<br><br>
+
+                    <div class="feature-box">
                         <i class="fa-solid fa-palette"></i>
-                        <h4 data-key="pf7"> &nbsp; Custom Design & Branding</h4>
+                        <h4> &nbsp; Custom Design & Branding</h4>
                     </div>
 
                     <div class="feature-box">
                         <i class="fa-solid fa-user-check"></i>
-                        <h4 data-key="pf8">Enhanced User Experience</h4>
+                        <h4>Enhanced User Experience</h4>
                     </div>
 
-                    <div class="feature-box-1">
+                    <div class="feature-box">
                         <i class="fa-solid fa-rocket"></i>
-                        <h4 data-key="pf9"> &nbsp; Performance & Mobile Optimization</h4>
+                        <h4> &nbsp; Performance & Mobile Optimization</h4>
                     </div>
 
-                    <a href="https://zeroxone.site/" target="_blank" class="btn btn-outline" data-key="pl3">live
-                        site</a>
+                    <a href="https://zeroxone.site/" target="_blank" class="btn btn-outline">live site</a>
                     </p>
                 </div>
 
@@ -1630,72 +1730,59 @@
             <div class="portfolio-box">
 
                 <div class="portfolio-text">
-                    <h3 data-key="ph4">4 - NOAIR </h3>
-                    <p id="pp1" data-key="pp41">
+                    <h3>4 - NOAIR </h3>
+                    <p>
                         Project Type: Shopify Store<br><br>
 
                         NOAIR is a local streetwear brand offering premium hoodies, custom embroidered items, and
                         ready-to-wear designs. The client wanted a fully customized store that allows customers to
                         Design Your Own hoodie or choose from curated ready-made collections, giving them flexibility
                         and a unique shopping experience.<br><br>
-                    </p>
-
                     <div class="results-section">
-                        <h4 data-key="pp42">challenges</h4>
+                        <h4>challenges</h4>
                     </div>
 
-                    <p id="pp1" data-key="pp43">
-                        1- The client needed a custom coding solution for the “Design Your Own” section, which required
-                        high
-                        interactivity and responsiveness.<br>
-                        2- Ensuring fast performance and lightweight pages while handling many custom features.<br>
-                        3- Organizing multiple product categories and designs while maintaining a smooth user
-                        experience.<br><br>
-                    </p>
+                    1- The client needed a custom coding solution for the “Design Your Own” section, which required high
+                    interactivity and responsiveness.<br>
+                    2- Ensuring fast performance and lightweight pages while handling many custom features.<br>
+                    3- Organizing multiple product categories and designs while maintaining a smooth user
+                    experience.<br><br>
 
                     <div class="results-section">
-                        <h4 data-key="pp44">our solutions</h4>
+                        <h4>our solutions</h4>
                     </div>
-
-                    <p id="pp1" data-key="pp45">
-                        Developed 90% of the website’s custom code, including the interactive “Design Your Own”
-                        section.<br>
-                        Optimized website performance to ensure fast loading times and smooth navigation.<br>
-                        Implemented intuitive navigation for both custom-designed and ready-to-buy products.<br>
-                        Enhanced mobile responsiveness and cross-browser compatibility.<br>
-                        Integrated product reviews and key brand selling points (quality, free shipping,
-                        comfort).<br><br>
-                    </p>
+                    Developed 90% of the website’s custom code, including the interactive “Design Your Own” section.<br>
+                    Optimized website performance to ensure fast loading times and smooth navigation.<br>
+                    Implemented intuitive navigation for both custom-designed and ready-to-buy products.<br>
+                    Enhanced mobile responsiveness and cross-browser compatibility.<br>
+                    Integrated product reviews and key brand selling points (quality, free shipping, comfort).<br><br>
 
                     <div class="results-section">
-                        <h4 data-key="pp46">Results</h4>
+                        <h4>Results</h4>
                     </div>
 
-                    <p id="pp1" data-key="pp47">
-                        Increased site visits by ~50% within the first month.<br>
-                        Boosted online sales by ~40% through improved UX and custom interactive features.<br>
-                        Strengthened NOAIR’s brand presence, making them more competitive and recognizable in the
-                        streetwear
-                        market.<br><br>
-                    </p>
+                    Increased site visits by ~50% within the first month.<br>
+                    Boosted online sales by ~40% through improved UX and custom interactive features.<br>
+                    Strengthened NOAIR’s brand presence, making them more competitive and recognizable in the streetwear
+                    market.<br><br>
 
                     <div class="feature-box">
                         <i class="fa-solid fa-paint-brush"></i>
-                        <h4 data-key="pf10">Custom Interactive Design Section</h4>
+                        <h4>Custom Interactive Design Section</h4>
                     </div>
 
                     <div class="feature-box">
                         <i class="fa-solid fa-rocket"></i>
-                        <h4 data-key="pf11">Optimized Shopping Experience</h4>
+                        <h4>Optimized Shopping Experience</h4>
                     </div>
 
-                    <div class="feature-box-1">
+                    <div class="feature-box">
                         <i class="fa-solid fa-mobile-alt"></i>
-                        <h4 data-key="pf12"> &nbsp; Mobile & Responsive Ready</h4>
+                        <h4> &nbsp; Mobile & Responsive Ready</h4>
                     </div>
 
-                    <a href="https://www.noair.store/" target="_blank" class="btn btn-outline" data-key="pl4">View live
-                        site</a>
+                    <a href="https://www.noair.store/" target="_blank" class="btn btn-outline">live site</a>
+                    </p>
                 </div>
 
                 <div class="portfolio-image">
@@ -1706,69 +1793,61 @@
             <div class="portfolio-box">
 
                 <div class="portfolio-text">
-                    <h3 data-key="ph5">5 - Dr. Ahmed Nabil – Personal Brand Website </h3>
-                    <p id="pp1" data-key="pp51">
-                        Project Type: Personal Brand | Clinic Website<br><br>
+                    <h3>5 - Dr. Ahmed Nabil – Personal Brand Website </h3>
+                    <p>
+                        Project Type: Personal Brand / Clinic Website<br><br>
 
                         This project was a training project designed to showcase advanced web development skills and
                         create a functional demo for potential clients. The website represents Dr. Ahmed Nabil, a
                         board-certified Internal Medicine specialist, and was designed to simulate a fully
                         operational clinic website.<br><br>
-                    </p>
-
                     <div class="results-section">
-                        <h4 data-key="pp52">challenges</h4>
+                        <h4>challenges</h4>
                     </div>
 
-                    <p id="pp1" data-key="pp53">
-                        1- Creating an interactive and professional clinic website for demonstration purposes.<br>
-                        2- Implementing functional features like appointment booking, clinic information, and social
-                        media
-                        integration.<br>
-                        3- Ensuring the site is modern, responsive, and user-friendly for both desktop and mobile
-                        users.<br><br>
-                    </p>
+                    1- Creating an interactive and professional clinic website for demonstration purposes.<br>
+                    2- Implementing functional features like appointment booking, clinic information, and social media
+                    integration.<br>
+                    3- Ensuring the site is modern, responsive, and user-friendly for both desktop and mobile
+                    users.<br><br>
 
                     <div class="results-section">
-                        <h4 data-key="pp54">our solutions</h4>
+                        <h4>our solutions</h4>
                     </div>
 
-                    <p id="pp1" data-key="pp55">
-                        Developed a fully responsive HTML/CSS/JS website showcasing key clinic features.<br>
-                        Implemented Book Appointment functionality for patient convenience.<br>
-                        Added Clinic Information including services, location, and contact info.<br>
-                        Integrated social media feeds to show active engagement.<br>
-                        Designed interactive UI elements such as info boxes and service highlights.<br><br>
-                    </p>
+                    Developed a fully responsive HTML/CSS/JS website showcasing key clinic features.<br>
+                    Implemented Book Appointment functionality for patient convenience.<br>
+                    Added Clinic Information including services, location, and contact info.<br>
+                    Integrated social media feeds to show active engagement.<br>
+                    Designed interactive UI elements such as info boxes and service highlights.<br><br>
 
                     <div class="results-section">
-                        <h4 data-key="pp56">Results</h4>
+                        <h4>Results</h4>
                     </div>
 
-                    <p id="pp1" data-key="pp57">
-                        The site serves as a professional showcase of web development and UI/UX capabilities.<br>
-                        Demonstrates functional features that clients can request in real projects.<br>
-                        Highlights skills in creating fast, modern, and responsive websites suitable for healthcare
-                        brands.<br><br>
-                    </p>
+                    The site serves as a professional showcase of web development and UI/UX capabilities.<br>
+                    Demonstrates functional features that clients can request in real projects.<br>
+                    Highlights skills in creating fast, modern, and responsive websites suitable for healthcare
+                    brands.<br><br>
 
-                    <div class="feature-box-1">
+                    <div class="feature-box">
                         <i class="fa-solid fa-calendar-check"></i>
-                        <h4 data-key="pf13"> &nbsp; Appointment Booking</h4>
+                        <h4> &nbsp; Appointment Booking</h4>
                     </div>
 
                     <div class="feature-box">
                         <i class="fa-solid fa-hospital-user"></i>
-                        <h4 data-key="pf14">Clinic Information</h4>
+                        <h4>Clinic Information</h4>
                     </div>
 
-                    <div class="feature-box-1">
+                    <div class="feature-box">
                         <i class="fa-solid fa-mobile-alt"></i>
-                        <h4 data-key="pf15"> &nbsp; Responsive & Modern Design</h4>
+                        <h4> &nbsp; Responsive & Modern Design</h4>
                     </div>
 
-                    <a href="https://yousef-hegazi.github.io/Clinic/" target="_blank" class="btn btn-outline"
-                        data-key="pl5">View live site</a>
+                    <a href="https://yousef-hegazi.github.io/Clinic/" target="_blank" class="btn btn-outline">live
+                        site</a>
+                    </p>
                 </div>
 
                 <div class="portfolio-image">
@@ -1785,57 +1864,57 @@
         <div class="container reveal">
 
             <div class="why-us-title">
-                <h2 data-key="wuh">Why Us</h2>
+                <h2>WHY US</h2>
             </div>
 
             <div class="why-us-grid">
 
                 <div class="why-us-box">
                     <i class="fa-solid fa-chart-line"></i>
-                    <h3 data-key="wuh1">We Build for Growth</h3>
-                    <p data-key="wup1">We design every project to increase traffic, conversions, and revenue.</p>
+                    <h3>We Build for Growth</h3>
+                    <p>We design every project to increase traffic, conversions, and revenue.</p>
                 </div>
 
                 <div class="why-us-box">
                     <i class="fa-solid fa-layer-group"></i>
-                    <h3 data-key="wuh2">Code That Scales</h3>
-                    <p data-key="wup2">Clean, optimized development built for speed and long-term expansion. </p>
+                    <h3>Code That Scales</h3>
+                    <p>Clean, optimized development built for speed and long-term expansion. </p>
                 </div>
 
                 <div class="why-us-box">
                     <i class="fa-solid fa-bullseye"></i>
-                    <h3 data-key="wuh3">Conversion-Focused Design</h3>
-                    <p data-key="wup3">We structure user journeys that turn visitors into paying clients.</p>
+                    <h3>Conversion-Focused Design</h3>
+                    <p>We structure user journeys that turn visitors into paying clients.</p>
                 </div>
 
                 <div class="why-us-box">
                     <i class="fa-solid fa-gauge-high"></i>
-                    <h3 data-key="wuh4">Speed Is a Priority</h3>
-                    <p data-key="wup4">Fast-loading platforms that improve user experience and SEO.</p>
+                    <h3>Speed Is a Priority</h3>
+                    <p>Fast-loading platforms that improve user experience and SEO.</p>
                 </div>
 
                 <div class="why-us-box">
                     <i class="fa-solid fa-code"></i>
-                    <h3 data-key="wuh5">Custom Over Templates</h3>
-                    <p data-key="wup5">Tailored solutions built around your brand — no generic themes.</p>
+                    <h3>Custom Over Templates</h3>
+                    <p>Tailored solutions built around your brand — no generic themes.</p>
                 </div>
 
                 <div class="why-us-box">
                     <i class="fa-solid fa-mobile-screen-button"></i>
-                    <h3 data-key="wuh6">Mobile-First Execution</h3>
-                    <p data-key="wup6">Designed to perform flawlessly across all devices.</p>
+                    <h3>Mobile-First Execution</h3>
+                    <p>Designed to perform flawlessly across all devices.</p>
                 </div>
 
                 <div class="why-us-box">
                     <i class="fa-solid fa-chess"></i>
-                    <h3 data-key="wuh7">Strategic Thinking</h3>
-                    <p data-key="wup7">We align technology with clear business objectives.</p>
+                    <h3>Strategic Thinking</h3>
+                    <p>We align technology with clear business objectives.</p>
                 </div>
 
                 <div class="why-us-box">
                     <i class="fa-solid fa-trophy"></i>
-                    <h3 data-key="wuh8">Built to Compete</h3>
-                    <p data-key="wup8">Digital platforms that position you ahead of competitors.</p>
+                    <h3>Built to Compete</h3>
+                    <p>Digital platforms that position you ahead of competitors.</p>
                 </div>
 
             </div>
@@ -1848,57 +1927,57 @@
         <div class="container reveal">
 
             <div class="industries-title">
-                <h2 data-key="ih">Industries We Serve</h2>
+                <h2>Industries We Serve</h2>
             </div>
 
             <div class="industries-grid">
 
                 <div class="industries-box">
                     <i class="fa-solid fa-shirt"></i>
-                    <h3 data-key="ih1">Fashion & Apparel Brands</h3>
-                    <p data-key="ip1">eCommerce stores – Local & growing fashion brands</p>
+                    <h3>Fashion & Apparel Brands</h3>
+                    <p>eCommerce stores – Local & growing fashion brands</p>
                 </div>
 
                 <div class="industries-box">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <h3 data-key="ih2">eCommerce & Retail</h3>
-                    <p data-key="ip2">Product-based businesses scaling online sales</p>
+                    <h3>eCommerce & Retail</h3>
+                    <p>Product-based businesses scaling online sales</p>
                 </div>
 
                 <div class="industries-box">
                     <i class="fa-solid fa-building"></i>
-                    <h3 data-key="ih3">Engineering & Construction</h3>
-                    <p data-key="ip3">Corporate websites for infrastructure & technical companies</p>
+                    <h3>Engineering & Construction</h3>
+                    <p>Corporate websites for infrastructure & technical companies</p>
                 </div>
 
                 <div class="industries-box">
                     <i class="fa-solid fa-stethoscope"></i>
-                    <h3 data-key="ih4">Healthcare & Medical</h3>
-                    <p data-key="ip4">Clinics, medical professionals, appointment-based systems</p>
+                    <h3>Healthcare & Medical</h3>
+                    <p>Clinics, medical professionals, appointment-based systems</p>
                 </div>
 
                 <div class="industries-box">
                     <i class="fa-solid fa-rocket"></i>
-                    <h3 data-key="ih5">Startups & Entrepreneurs</h3>
-                    <p data-key="ip5">MVPs, landing pages, digital-first brands</p>
+                    <h3>Startups & Entrepreneurs</h3>
+                    <p>MVPs, landing pages, digital-first brands</p>
                 </div>
 
                 <div class="industries-box">
                     <i class="fa-solid fa-user"></i>
-                    <h3 data-key="ih6">Personal Brands</h3>
-                    <p data-key="ip6">Coaches, consultants, content creators</p>
+                    <h3>Personal Brands</h3>
+                    <p>Coaches, consultants, content creators</p>
                 </div>
 
                 <div class="industries-box">
                     <i class="fa-solid fa-palette"></i>
-                    <h3 data-key="ih7">Creative & Media</h3>
-                    <p data-key="ip7">Studios, agencies, production companies</p>
+                    <h3>Creative & Media</h3>
+                    <p>Studios, agencies, production companies</p>
                 </div>
 
                 <div class="industries-box">
                     <i class="fa-solid fa-briefcase"></i>
-                    <h3 data-key="ih8">Corporate & B2B Services</h3>
-                    <p data-key="ip8">Professional service providers</p>
+                    <h3>Corporate & B2B Services</h3>
+                    <p>Professional service providers</p>
                 </div>
             </div>
 
@@ -2277,456 +2356,14 @@
             document.body.classList.remove("menu-open");
         });
 
-        const translations = {
-            en: {
-                home: "Home",
-                about: "About",
-                services: "Services",
-                portfolio: "Portfolio",
-                contact: "Contact",
-                language: "Language",
-                herotitle: "We Build Digital Systems That Generate Growth",
-                herodescription: `We design, develop and optimize powerful websites that convert visitors into revenue.`,
-                homeourservices: "Our Services",
-                contactus: "Contact Us",
-                abouttitle: "WHO WE ARE",
-                aboutsubtitle: `Built for Performance.
-                Designed for Impact.`,
-                aboutdescription: `At NexoraTech, we build digital systems that don’t just look good — they perform.
-                
-                We create high-converting websites, powerful eCommerce stores, and fully customized platforms designed to scale. By combining strategy, clean development, and precision design, we deliver measurable growth — more traffic, higher conversions, stronger brands.
-                
-                We don’t just build website
-                We engineer digital growth.
-                
-                `,
-                feature1: ` Performance Optimized`,
-                feature2: `Strategic Development`,
-                feature3: ` Growth Focused`,
-                services: "Our Services",
-                sh1: "Website Development",
-                sh1desc: "Custom-built business and corporate websites designed for performance, scalability, and long-term growth.",
-                sh2: "Custom wordpress",
-                sh2desc: "Fully customized WordPress solutions tailored to your brand, without relying on generic themes.",
-                sh3: "Landing Pages",
-                sh3desc: "High-converting landing pages built for marketing campaigns, lead generation, and paid ads.",
-                sh4: "Website Redesign",
-                sh4desc: "Transform outdated websites into modern, fast, and conversion-focused digital platforms.",
-                sh5: "UI / UX Design",
-                sh5desc: "Strategic user interface and experience design focused on clarity, usability, and engagement.",
-                sh6: "Figma to HTML",
-                sh6desc: "Pixel-perfect, responsive implementation from design files to clean, structured code.",
-                sh7: "Responsive frontend",
-                sh7desc: "Mobile-first, fully responsive frontend development optimized for all devices and screen sizes.",
-                sh8: "Shopify & WooCommerce",
-                sh8desc: "Complete e-commerce store setup, customization, and optimization for growth and sales.",
-                sh9: "Payment Integration",
-                sh9desc: "Secure and seamless payment gateway integration for smooth customer checkout experiences.",
-                pt: "Client Projects",
-                ph1: "1 - ASTERACTIVE",
-                pp1: `Engineering Infrastructure Corporate Website
-                
-                Asteractive is a multidisciplinary engineering and infrastructure company delivering complex civil, electrical, and safety systems. The challenge was to transform a technically strong company into a digitally strong brand.
-
-                The previous structure did not fully reflect their scale, expertise, or international-standard positioning. We redesigned the digital experience to communicate authority, technical depth, and operational reliability.
-    
-                We built a clean, structured corporate website that highlights their infrastructureprojects,power systems, and safety solutions while maintaining clarity for decision-makers andstakeholders.
-
-                As a result, the company achieved stronger digital credibility, improved engagement time,and anoticeable increase in qualified inquiries after launch.
-        
-                `,
-                pf1: `Structured Engineering Presentatio
-                
-                `,
-                pf2: `Authority-Driven Corporate Design
-                
-                `,
-                pf3: `Performance & Engagement Optimization
-                
-                `,
-                pl1: "View Live Site",
-                ph2: "2 - INTERACTIVE",
-                pp2: `Corporate Engineering Website
-                
-                Interactive is a leading engineering solutions provider specializing in complex electrical, mechanical, and safety systems. The challenge was to present highly technical services in a clear, professional, and user-friendly manner.
-
-                We transformed their online presence by creating a structured, modern corporate website that highlights multi-disciplinary expertise while emphasizing safety, reliability, and compliance with international standards.
-
-                The redesigned platform improved visitor engagement, increased qualified inquiries, and positioned Interactive as a trusted partner for large-scale engineering projects.
-                
-                `,
-                pf4: "Clear Multi-Disciplinary Layout",
-                pf5: "Professional Corporate Branding",
-                pf6: "Optimized Performance & Accessibility",
-                pl2: "View Live Site",
-                ph3: "3 - ZERO X ONE",
-                pp31: `Project Type: Custom Store on Sellr
-                
-                ZERO X ONE is a local fashion brand offering hoodies, sweatshirts, t-shirts, and jackets across multiple categories. The client wanted a sleek, modern online store that establishes a strong digital presence, builds trust, and increases sales.
-
-                `,
-                pp32: `challenges`,
-                pp33: `1- Multiple product categories required an organized, user-friendly layout.
-                2- Client wanted a “premium” look that reflects quality and trustworthiness.
-                3- Needed to integrate product reviews and highlight key selling points (fast delivery, high quality, easy returns).`,
-                pp34: `our solutions`,
-                pp35: `Customized Sellr store according to the client’s preferred design and branding.
-                Built custom sections to showcase product categories and reviews, improving usability and trust.
-                Fast and lightweight website for optimal performance.
-                Optimized checkout and shopping experience to boost conversions.
-                Fully responsive design for mobile and desktop users.`,
-                pp36: `Results`,
-                pp37: `Increased site visits by ~45% in the first month.
-                Boosted online sales by ~35% through better navigation and trust indicators.
-                Strengthened brand image, making ZERO X ONE more competitive locally.
-                
-                `,
-                pf7: "Custom Design & Branding",
-                pf8: "Enhanced User Experience",
-                pf9: "Performance & Mobile Optimization",
-                pl3: "View Live Site",
-                ph4: "4 - NOAIR",
-                pp41: `Project Type: Shopify Store
-                
-                NOAIR is a local streetwear brand offering premium hoodies, custom embroidered items, and ready-to-wear designs. The client wanted a fully customized store that allows customers to Design Your Own hoodie or choose from curated ready-made collections, giving them flexibility and a unique shopping experience.
-                
-                `,
-                pp42: `challenges`,
-                pp43: `1- The client needed a custom coding solution for the “Design Your Own” section, which required high interactivity and responsiveness.
-                2- Ensuring fast performance and lightweight pages while handling many custom features.
-                3- Organizing multiple product categories and designs while maintaining a smooth user experience.
-                
-                `,
-                pp44: `our solutions`,
-                pp45: `Developed 90% of the website’s custom code, including the interactive “Design Your Own” section.
-                Optimized website performance to ensure fast loading times and smooth navigation.
-                Implemented intuitive navigation for both custom-designed and ready-to-buy products.
-                Enhanced mobile responsiveness and cross-browser compatibility.
-                Integrated product reviews and key brand selling points (quality, free shipping, comfort).
-                
-                `,
-                pp46: `Results`,
-                pp47: `Increased site visits by ~50% within the first month.
-                Boosted online sales by ~40% through improved UX and custom interactive features.
-                Strengthened NOAIR’s brand presence, making them more competitive and recognizable in the streetwear market.
-                
-                `,
-                pf10: "Custom Interactive Design Section",
-                pf11: "Optimized Shopping Experience",
-                pf12: "Mobile & Responsive Ready",
-                pl4: "View Live Site",
-                ph5: "5 - Dr. Ahmed Nabil – Personal Brand Website ",
-                pp51: `Project Type: Personal Brand | Clinic Website
-
-                This project was a training project designed to showcase advanced web development skills and create a functional demo for potential clients. The website represents Dr. Ahmed Nabil, a board-certified Internal Medicine specialist, and was designed to simulate a fully operational clinic website.
-                
-                `,
-                pp52: `challenges`,
-                pp53: `1- Creating an interactive and professional clinic website for demonstration purposes.
-                2- Implementing functional features like appointment booking, clinic information, and social media integration.
-                3- Ensuring the site is modern, responsive, and user-friendly for both desktop and mobile users.
-                    
-                `,
-                pp54: `our solutions`,
-                pp55: `Developed a fully responsive HTML/CSS/JS website showcasing key clinic features.
-                Implemented Book Appointment functionality for patient convenience.
-                Added Clinic Information including services, location, and contact info.
-                Integrated social media feeds to show active engagement.
-                Designed interactive UI elements such as info boxes and service highlights.
-                
-                `,
-                pp56: `Results`,
-                pp57: `The site serves as a professional showcase of web development and UI/UX capabilities.
-                Demonstrates functional features that clients can request in real projects.
-                Highlights skills in creating fast, modern, and responsive websites suitable for healthcare brands.
-                    
-                `,
-                pf13: "Appointment Booking",
-                pf14: "Clinic Information",
-                pf15: "Responsive & Modern Design",
-                pl5: "View Live Site",
-                wuh: "Why Us",
-                wuh1: "We Build for Growth",
-                wup1: "We design every project to increase traffic, conversions, and revenue.",
-                wuh2: "Code That Scales",
-                wup2: "Clean, optimized development built for speed and long-term expansion.",
-                wuh3: "Conversion-Focused Design",
-                wup3: "We structure user journeys that turn visitors into paying clients.",
-                wuh4: "Speed Is a Priority",
-                wup4: "Fast-loading platforms that improve user experience and SEO.",
-                wuh5: "Custom Over Templates",
-                wup5: "Tailored solutions built around your brand — no generic themes.",
-                wuh6: "Mobile-First Execution",
-                wup6: "Designed to perform flawlessly across all devices.",
-                wuh7: "Strategic Thinking",
-                wup7: "We align technology with clear business objectives.",
-                wuh8: "Built to Compete",
-                wup8: "Digital platforms that position you ahead of competitors.",
-                ih: "Industries We Serve",
-                ih1: "Fashion & Apparel Brands",
-                ip1: "eCommerce stores – Local & growing fashion brands",
-                ih2: "eCommerce & Retail",
-                ip2: "Product-based businesses scaling online sales",
-                ih3: "Engineering & Construction",
-                ip3: "Corporate websites for infrastructure & technical companies",
-                ih4: "Healthcare & Medical",
-                ip4: "Clinics, medical professionals, appointment-based systems",
-                ih5: "Startups & Entrepreneurs",
-                ip5: "MVPs, landing pages, digital-first brands",
-                ih6: "Personal Brands",
-                ip6: "Coaches, consultants, content creators",
-                ih7: "Creative & Media",
-                ip7: "Studios, agencies, production companies",
-                ih8: "Corporate & B2B Services",
-                ip8: "Professional service providers",
-
-
-            },
-            ar: {
-                home: "الرئيسية",
-                about: "من نحن",
-                services: "خدماتنا",
-                portfolio: "أعمالنا",
-                contact: "تواصل معنا",
-                language: "اللغة",
-                herotitle: "نحن نبني أنظمة رقمية تصنع النمو",
-                herodescription: `نحن نصمّم ونطوّر ونُحسّن مواقع إلكترونية قوية تحوّل الزوّار إلى عوائد فعلية.`,
-                homeourservices: "خدماتنا",
-                contactus: "تواصل معنا",
-                abouttitle: "من نحن",
-                aboutsubtitle: `مصمم للأداء.
-                مبني للتأثير.`,
-                aboutdescription: `في NexoraTech، لا نصنع مواقع جميلة فحسب — بل نبني أنظمة تعمل بكفاءة وتحقق نتائج.
-                
-                نطوّر مواقع عالية التحويل، ومتاجر إلكترونية قوية، ومنصات مخصصة بالكامل قابلة للتوسع. من خلال الجمع بين الاستراتيجية، والبرمجة النظيفة، والتصميم الدقيق، نحقق نموًا قابلًا للقياس — زيارات أكثر، معدلات تحويل أعلى، وعلامات تجارية أقوى.
-
-                نحن لا نبني مواقع فقط.
-                نحن نصنع هندسة للنمو الرقمي.
-                
-                `,
-                feature1: `محسّن للأداء`,
-                feature2: `التطوير الاستراتيجي`,
-                feature3: `التركيز على النمو`,
-                services: "خدماتنا",
-                sh1: "تطوير المواقع",
-                sh1desc: "مواقع أعمال وشركات مصممة خصيصًا لتقديم أداء قوي، وقابلية للتوسع، ودعم النمو المستدام على المدى الطويل.",
-                sh2: "ووردبريس مخصص",
-                sh2desc: "حلول ووردبريس مخصصة تتماشى مع هوية علامتك التجارية وتحقيق أهدافك الرقمية. بدون الاعتماد على القوالب الجاهزة.",
-                sh3: "صفحات هبوط",
-                sh3desc: "صفحات هبوط عالية التحويل مصممة خصيصًا للحملات التسويقية، وجمع العملاء المحتملين، وإعلانات الدفع مقابل النقر — بهدف تحقيق أفضل عائد ممكن.",
-                sh4: "إعادة تصميم المواقع",
-                sh4desc: "تحويل المواقع القديمة إلى منصات رقمية حديثة، سريعة، ومركّزة على التحويل.",
-                sh5: "تصميم واجهة وتجربة المستخدم",
-                sh5desc: "تصميم استراتيجي لواجهة وتجربة المستخدم يركز على الوضوح، وسهولة الاستخدام، وجذب الانتباه.",
-                sh6: "من فيجما إلى HTML",
-                sh6desc: "تنفيذ دقيق ومتجاوب من ملفات التصميم إلى كود نظيف ومنظم.",
-                sh7: "واجهات أمامية متجاوبة",
-                sh7desc: "تطوير واجهات متجاوبة تركز على الأجهزة المحمولة، ومحسّنة لجميع الأجهزة وأحجام الشاشات.",
-                sh8: "شوبفاي وووكومرس",
-                sh8desc: "إعداد متجر إلكتروني كامل، وتخصيصه، وتحسينه للنمو والمبيعات.",
-                sh9: "ربط بوابات الدفع",
-                sh9desc: "تكامل آمن وسلس مع بوابات الدفع لضمان تجربة دفع احترافية وسريعة تعزز ثقة العملاء وتسهّل إتمام عمليات الشراء.",
-                pt: "مشاريع عملائنا",
-                ph1: "١- استراكتيف",
-                pp1: `موقع شركة هندسية للبنية التحتية
-                
-                تُعد أستراكتيف شركة هندسية متعددة التخصصات تعمل في تنفيذ مشروعات البنية التحتية المعقدة والأنظمة المدنية والكهربائية وأنظمة السلامة. كان التحدي يتمثل في تحويل قوة الشركة الفنية إلى حضور رقمي يعكس هذا المستوى من الاحتراف والعمق.
-
-                الهيكل السابق للموقع لم يكن يعكس حجم أعمالهم، ولا خبراتهم، ولا تموضعهم القائم على المعايير الدولية بالشكل الكافي. لذلك قمنا بإعادة تصميم التجربة الرقمية بالكامل لتجسيد السلطة الهندسية، والعمق التقني، والموثوقية التشغيلية.
-
-                أنشأنا موقعًا مؤسسيًا منظمًا وواضحًا يبرز مشروعات البنية التحتية، وأنظمة الطاقة، وحلول السلامة، مع الحفاظ على وضوح المحتوى وسهولة الوصول إليه لصنّاع القرار وأصحاب المصلحة.
-
-                ونتيجة لذلك، حققت الشركة حضورًا رقميًا أكثر قوة ومصداقية، وتحسنًا في مدة تفاعل الزوار، وزيادة ملحوظة في الاستفسارات الجادة بعد إطلاق الموقع.
-
-                `,
-                pf1: `عرض هندسي منظم
-                
-                `,
-                pf2: `تصميم مؤسسي يعكس الهيبة والاحتراف
-                
-                `,
-                pf3: `تحسين الأداء وتعزيز التفاعل
-                
-                `,
-                pl1: "زيارة الموقع",
-                ph2: "٢- إنتراكتيف",
-                pp2: `موقع هندسي مؤسسي
-                
-                تُعدّ Interactive شركة رائدة في تقديم الحلول الهندسية، متخصصة في الأنظمة الكهربائية والميكانيكية وأنظمة السلامة المعقدة. تمثّل التحدي في عرض الخدمات التقنية عالية التعقيد بطريقة واضحة واحترافية وسهلة الاستخدام.
-
-                قمنا بتحويل حضورهم الرقمي من خلال إنشاء موقع مؤسسي حديث ومنظم يُبرز خبراتهم متعددة التخصصات، مع التركيز على معايير السلامة والموثوقية والالتزام بالمواصفات الدولية.
-
-                ساهمت المنصة الجديدة في تحسين تفاعل الزوار، وزيادة عدد الاستفسارات المؤهلة، وتعزيز مكانة Interactive كشريك موثوق للمشاريع الهندسية واسعة النطاق.
-
-                `,
-                pf4: "تصميم واضح متعدد التخصصات",
-                pf5: "هوية مؤسسية احترافية",
-                pf6: "أداء محسّن وسهولة وصول عالية",
-                pl2: "زيارة الموقع",
-                ph3: "٣ - ZERO X ONE",
-                pp31: `نوع المشروع: متجر مخصص على منصة Sellr
-                
-                ZERO X ONE علامة أزياء محلية تقدم هوديز، سويت شيرتات، تيشيرتات، وجاكيتات ضمن عدة فئات. كان الهدف إنشاء متجر إلكتروني عصري وأنيق يعزز الحضور الرقمي للعلامة، ويبني الثقة، ويزيد من المبيعات.
-                `,
-                pp32: `التحديات`,
-                pp33: `١- تعدد فئات المنتجات تطلّب تصميمًا منظمًا وسهل الاستخدام.
-                ٢- رغبة العميل في مظهر “فاخر” يعكس الجودة والمصداقية.
-                ٣- الحاجة لدمج تقييمات المنتجات وإبراز نقاط البيع الأساسية (توصيل سريع، جودة عالية، إرجاع سهل).
-                `,
-                pp34: `حلولنا`,
-                pp35: `قمنا بتخصيص متجر Sellr وفقًا للتصميم والهوية البصرية التي يفضلها العميل.
-                أنشأنا أقسامًا مخصصة لعرض فئات المنتجات والتقييمات، مما حسّن سهولة الاستخدام وعزّز الثقة.
-                صممنا موقعًا سريعًا وخفيفًا لضمان أفضل أداء.
-                حسّنا تجربة الشراء وإتمام الطلب لزيادة معدلات التحويل.
-                اعتمدنا تصميمًا متجاوبًا بالكامل ليتناسب مع مستخدمي الهاتف المحمول وسطح المكتب.
-                `,
-                pp36: `النتائج`,
-                pp37: `زيادة زيارات الموقع بنسبة تقارب 45% خلال الشهر الأول.
-                ارتفاع المبيعات عبر الإنترنت بنسبة تقارب 35% بفضل تحسين التنقل وتعزيز عناصر الثقة.
-                تعزيز صورة العلامة التجارية وجعل ZERO X ONE أكثر تنافسية محليًا.                
-                
-                `,
-                pf7: "تصميم وهوية بصرية مخصصة",
-                pf8: "تجربة مستخدم محسّنة",
-                pf9: "تحسين الأداء والتوافق مع الأجهزة المحمولة",
-                pl3: "زيارة الموقع",
-                ph4: "٤ - NOAIR",
-                pp41: `نوع المشروع: متجر على Shopify
-                
-                NOAIR علامة ستريت وير محلية تقدم هوديز فاخرة، قطعًا مطرزة مخصصة، وتصميمات جاهزة للارتداء. أراد العميل متجرًا مخصصًا بالكامل يتيح للعملاء إمكانية تصميم هودي خاص بهم أو الاختيار من بين مجموعات جاهزة منتقاة، بما يمنحهم مرونة وتجربة تسوق فريدة.                
-                `,
-                pp42: `التحديات`,
-                pp43: `1- احتاج العميل إلى حل برمجي مخصص لقسم “صمّم بنفسك”، يتطلب تفاعلًا عاليًا واستجابة سلسة.
-                2- ضمان سرعة الأداء وخفة الصفحات رغم كثرة الخصائص المخصصة.
-                3- تنظيم فئات ومنتجات متعددة مع الحفاظ على تجربة مستخدم سلسة وواضحة.
-
-                `,
-                pp44: `حلولنا`,
-                pp45: `قمنا بتطوير 90% من الكود البرمجي المخصص للموقع، بما في ذلك القسم التفاعلي “صمّم بنفسك”.
-                حسّنا أداء الموقع لضمان سرعة تحميل عالية وتنقل سلس.
-                أنشأنا نظام تنقل بديهي يسهّل الوصول إلى المنتجات المخصصة والجاهزة للشراء.
-                عزّزنا التوافق مع الهواتف المحمولة والمتصفحات المختلفة.
-                دمجنا تقييمات المنتجات وأبرزنا نقاط القوة الرئيسية للعلامة (الجودة، الشحن المجاني، الراحة).
-
-                `,
-                pp46: `النتائج`,
-                pp47: `زيادة زيارات الموقع بنسبة تقارب 50% خلال الشهر الأول.
-               ارتفاع المبيعات عبر الإنترنت بنسبة تقارب 40% بفضل تحسين تجربة المستخدم والخصائص التفاعلية المخصصة.
-                تعزيز الحضور الرقمي لعلامة NOAIR وجعلها أكثر تنافسية وانتشارًا في سوق الستريت وير.
-
-                `,
-                pf10: "قسم تصميم تفاعلي مخصص",
-                pf11: "تجربة تسوق محسّنة",
-                pf12: "جاهزية كاملة للهواتف والتصميم المتجاوب",
-                pl4: "زيارة الموقع",
-                ph5: "٥ - د. أحمد نبيل – موقع علامة شخصية",
-                pp51: `نوع المشروع: علامة شخصية | موقع عيادة
-
-                كان هذا المشروع تدريبياً يهدف إلى استعراض مهارات متقدمة في تطوير الويب وإنشاء نموذج عملي يُعرض على العملاء المحتملين. يمثّل الموقع د. أحمد نبيل، أخصائي الباطنة المعتمد، وقد تم تصميمه لمحاكاة موقع عيادة يعمل بشكل متكامل.
-                
-                `,
-                pp52: `التحديات`,
-                pp53: `1- إنشاء موقع عيادة تفاعلي واحترافي لغرض العرض والتجربة.
-                2- تنفيذ خصائص عملية مثل حجز المواعيد، عرض معلومات العيادة، وربط وسائل التواصل الاجتماعي.
-                3- ضمان أن يكون الموقع عصريًا، متجاوبًا، وسهل الاستخدام لمستخدمي الكمبيوتر والهاتف المحمول.
-                    
-                `,
-                pp54: `حلولنا`,
-                pp55: `قمنا بتطوير موقع متكامل باستخدام HTML / CSS / JS بتصميم متجاوب بالكامل يعرض أهم خصائص العيادة.
-                نفذنا خاصية حجز المواعيد لتسهيل تجربة المرضى.
-                أضفنا قسم معلومات العيادة متضمناً الخدمات، الموقع، وبيانات التواصل.
-                دمجنا خلاصات وسائل التواصل الاجتماعي لإظهار التفاعل والنشاط.
-                صممنا عناصر واجهة تفاعلية مثل صناديق المعلومات وإبراز الخدمات.
-                
-                `,
-                pp56: `النتائج`,
-                pp57: `يعمل الموقع كعرض احترافي لمهارات تطوير الويب وتجربة المستخدم.
-                يعرض خصائص عملية يمكن للعملاء طلبها في مشاريع حقيقية.
-                يبرز القدرة على إنشاء مواقع سريعة، عصرية، ومتجاوبة تناسب العلامات في القطاع الطبي.
-                    
-                `,
-                pf13: "حجز المواعيد",
-                pf14: "معلومات العيادة",
-                pf15: "تصميم عصري ومتجاوب",
-                pl5: "زيارة الموقع",
-                wuh: "لماذا نحن؟",
-                wuh1: "نبني من أجل النمو",
-                wup1: "نصمّم كل مشروع بهدف زيادة الزيارات، ورفع معدلات التحويل، وتعزيز الإيرادات.",
-                wuh2: "كود قابل للتوسّع",
-                wup2: "تطوير نظيف ومحسّن مبني على السرعة وقابل للنمو على المدى الطويل.",
-                wuh3: "تصميم يركّز على التحويل",
-                wup3: "نُهيكل رحلة المستخدم لتحويل الزوّار إلى عملاء فعليين.",
-                wuh4: "السرعة أولوية",
-                wup4: "منصات سريعة التحميل تعزّز تجربة المستخدم وتحسّن نتائج محركات البحث (SEO).",
-                wuh5: "حلول مخصّصة لا قوالب جاهزة",
-                wup5: "حلول مصممة خصيصًا لهويتك — بدون استخدام ثيمات عامة.",
-                wuh6: "تنفيذ وفق نهج الهاتف أولًا",
-                wup6: "مصمم ليعمل بكفاءة مثالية على جميع الأجهزة.",
-                wuh7: "تفكير استراتيجي",
-                wup7: "نربط التقنية بأهداف عمل واضحة ومدروسة.",
-                wuh8: "مبني للمنافسة",
-                wup8: "منصات رقمية تضعك في موقع متقدم أمام منافسيك.",
-                ih: "القطاعات التي نخدمها",
-                ih1: "علامات الأزياء والملابس",
-                ip1: "متاجر إلكترونية — علامات أزياء محلية ونامية",
-                ih2: "التجارة الإلكترونية والتجزئة",
-                ip2: "أعمال قائمة على المنتجات تسعى لتوسيع مبيعاتها عبر الإنترنت",
-                ih3: "الهندسة والإنشاءات",
-                ip3: "مواقع شركات للبنية التحتية والشركات التقنية",
-                ih4: "الرعاية الصحية والطبية",
-                ip4: "عيادات، أطباء، وأنظمة حجز مواعيد",
-                ih5: "الشركات الناشئة ورواد الأعمال",
-                ip5: "نماذج أولية (MVPs)، صفحات هبوط، وعلامات رقمية حديثة",
-                ih6: "العلامات الشخصية",
-                ip6: "مدربون، مستشارون، وصناع محتوى",
-                ih7: "الإبداع والإعلام",
-                ip7: "استوديوهات، وكالات، وشركات إنتاج",
-                ih8: "الشركات وخدمات B2B",
-                ip8: "مقدمو خدمات احترافية للشركات",
-
-            }
-        };
-
-        function changeLanguage(lang) {
-            document.querySelectorAll("[data-key]").forEach(element => {
-                const key = element.getAttribute("data-key");
-                element.textContent = translations[lang][key];
-            });
-
-            // عشان الاتجاه يتغير
-            if (lang === "ar") {
-                document.body.classList.add("rtl");
-            } else {
-                document.body.classList.remove("rtl");
-            }
-        }
-
-        document.querySelectorAll(".lang-option").forEach(option => {
-            option.addEventListener("click", function () {
-
-                const selectedLang = this.getAttribute("data-lang");
-
-                changeLanguage(selectedLang);
-
-                // حفظ اللغة
-                localStorage.setItem("siteLanguage", selectedLang);
-
-                // قفل كل حاجة
-                langModal.classList.remove("active");
-                navLinks.classList.remove("active");
-                overlay.classList.remove("active");
+        // Close mobile menu when clicking on any nav link
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active"); // اقفل القائمة
+                overlay.classList.remove("active");  // اقفل الخلفية
                 overlay.classList.remove("no-blur");
-                document.body.classList.remove("menu-open");
+                document.body.classList.remove("menu-open"); // رجع السكرول
             });
-        });
-
-        // عند تحميل الصفحة
-        document.addEventListener("DOMContentLoaded", function () {
-            const savedLang = localStorage.getItem("siteLanguage");
-
-            if (savedLang) {
-                changeLanguage(savedLang);
-            }
         });
 
     </script>
