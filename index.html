@@ -2729,16 +2729,6 @@
             }
         });
 
-        // Close mobile menu when clicking on any nav link
-        document.querySelectorAll(".nav-links a").forEach(link => {
-            link.addEventListener("click", () => {
-                navLinks.classList.remove("active"); // اقفل القائمة
-                overlay.classList.remove("active");  // اقفل الخلفية
-                overlay.classList.remove("no-blur");
-                document.body.classList.remove("menu-open"); // رجع السكرول
-            });
-        });
-
     </script>
 
 </body>
