@@ -256,8 +256,9 @@
                 font-size: 24px;
                 cursor: pointer;
                 position: relative;
-                right: 80px;
                 order: 3;
+                margin-left: auto;
+                margin-right: 15px;
             }
 
             .logo {
@@ -298,6 +299,19 @@
 
             .lang-btn-modern {
                 order: 2;
+            }
+
+            body.rtl .nav-links {
+                direction: rtl;
+                /* لتصحيح اتجاه النص */
+                text-align: right;
+                /* تخلي اللينكات تظهر على اليمين */
+            }
+
+            body.rtl .nav-links li {
+                display: block;
+                /* اجبار كل لينك في سطر منفصل */
+                width: 100%;
             }
 
         }
@@ -1163,7 +1177,7 @@
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            gap: 3px;
             padding: 0 8px 40px;
         }
 
@@ -1921,7 +1935,8 @@
                             <div class="user-icon"><i class="fa-solid fa-user"></i></div>
                             <h3 data-key="t1h">Eng.Ehab</h3>
                             <div class="stars">★★★★★</div>
-                            <p id="pp1" data-key="t1p">NexoraTech delivered exactly what we needed — a digital presence that reflects our
+                            <p id="pp1" data-key="t1p">NexoraTech delivered exactly what we needed — a digital presence
+                                that reflects our
                                 engineering standards.
                                 Professional, precise, and seamless to work with.</p>
                         </div>
@@ -1938,7 +1953,8 @@
                             <div class="user-icon"><i class="fa-solid fa-user"></i></div>
                             <h3 data-key="t3h">Eng.Ehab</h3>
                             <div class="stars">★★★★★</div>
-                            <p id="pp1" data-key="t3p">After our first successful collaboration, working with NexoraTech again was a clear
+                            <p id="pp1" data-key="t3p">After our first successful collaboration, working with NexoraTech
+                                again was a clear
                                 choice.<br>
                                 They consistently deliver with reliability, structure, and technical depth.</p>
                         </div>
@@ -1947,7 +1963,8 @@
                             <div class="user-icon"><i class="fa-solid fa-user"></i></div>
                             <h3 data-key="t4h">Mona Hassan</h3>
                             <div class="stars">★★★★★</div>
-                            <p id="pp1" data-key="t4p">What NexoraTech built wasn’t just a store — it was a fully engineered digital product.
+                            <p id="pp1" data-key="t4p">What NexoraTech built wasn’t just a store — it was a fully
+                                engineered digital product.
                                 From custom coding to performance optimization, the results exceeded our expectations.
                             </p>
                         </div>
@@ -2290,7 +2307,7 @@
                 feature1: ` Performance Optimized`,
                 feature2: `Strategic Development`,
                 feature3: ` Growth Focused`,
-                
+
                 sh: "Our Services",
                 sh1: "Website Development",
                 sh1desc: "Custom-built business and corporate websites designed for performance, scalability, and long-term growth.",
@@ -2310,7 +2327,7 @@
                 sh8desc: "Complete e-commerce store setup, customization, and optimization for growth and sales.",
                 sh9: "Payment Integration",
                 sh9desc: "Secure and seamless payment gateway integration for smooth customer checkout experiences.",
-                
+
                 pt: "Client Projects",
                 ph1: "1 - ASTERACTIVE",
                 pp1: `Engineering Infrastructure Corporate Website
@@ -2434,7 +2451,7 @@
                 pf14: "Clinic Information",
                 pf15: "Responsive & Modern Design",
                 pl5: "View Live Site",
-                
+
                 wuh: "Why Us",
                 wuh1: "We Build for Growth",
                 wup1: "We design every project to increase traffic, conversions, and revenue.",
@@ -2452,7 +2469,7 @@
                 wup7: "We align technology with clear business objectives.",
                 wuh8: "Built to Compete",
                 wup8: "Digital platforms that position you ahead of competitors.",
-                
+
                 ih: "Industries We Serve",
                 ih1: "Fashion & Apparel Brands",
                 ip1: "eCommerce stores – Local & growing fashion brands",
@@ -2470,7 +2487,7 @@
                 ip7: "Studios, agencies, production companies",
                 ih8: "Corporate & B2B Services",
                 ip8: "Professional service providers",
-                
+
                 th: "What Our Clients Say",
                 t1h: "Eng.Ehab",
                 t1p: `
@@ -2488,7 +2505,7 @@
                 t4p: `
                 What NexoraTech built wasn’t just a store — it was a fully engineered digital product. From custom coding to performance optimization, the results exceeded our expectations
                 `,
-                
+
                 ch: "Contact Us",
                 ch1: "Email Us",
                 ch2: "Chat On WhatsApp",
@@ -2497,7 +2514,7 @@
 
                 ct: "Let’s create powerful results that last and make a clear impact.",
                 cm: "Send Message",
-                
+
                 ctah: "Ready to Elevate Your Business?",
                 ctap: "Let NexoraTech help you build powerful digital solutions that grow your brand.",
                 ctab1: "Get Started",
