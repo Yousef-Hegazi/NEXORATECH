@@ -627,9 +627,22 @@
             padding: 60px;
             border-radius: 25px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.07);
-            transition: .3s;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease, max-height 0.8s ease;
             margin-bottom: 40px;
+            max-height: 2000px;
+            overflow: hidden;
 
+        }
+
+        .portfolio-box.hidden-project {
+            opacity: 0;
+            transform: translateY(40px);
+            pointer-events: none;
+            max-height: 0;
+            margin-bottom: 0;
+            padding: 0;
         }
 
         /* النص */
@@ -686,6 +699,67 @@
             margin-top: 20px;
             margin-bottom: 15px;
             color: var(--primary);
+        }
+
+        .project-content {
+            max-height: 330px;
+            overflow: hidden;
+            transition: max-height .5s ease;
+        }
+
+        .project-content.open {
+            max-height: 2000px;
+        }
+
+        .toggle-project {
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        button.btn-1 {
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .btn-1 {
+            padding: 16px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-inline-end: 15px;
+            margin-top: 25px;
+            transition: .3s;
+        }
+
+        .btn-primary-1 {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary-1:hover {
+            transform: translateY(-3px);
+        }
+
+        .toggle-wrapper {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .expand-project {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .expand-arrow {
+            font-size: 16px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+            transform-origin: center;
         }
 
         /* ================= RESPONSIVE ================= */
@@ -1483,46 +1557,56 @@
 
                 <div class="portfolio-text">
                     <h3 data-key="ph1">1 - ASTERACTIVE</h3>
-                    <p id="pp1" data-key="pp1">
-                        Engineering Infrastructure Corporate Website<br><br>
+                    <div class="project-content">
+                        <p id="pp1" data-key="pp1">
+                            Engineering Infrastructure Corporate Website<br><br>
 
-                        Asteractive is a multidisciplinary engineering and infrastructure company delivering complex
-                        civil, electrical, and safety systems. The challenge was to transform a technically strong
-                        company into a digitally strong brand.<br><br>
+                            Asteractive is a multidisciplinary engineering and infrastructure company delivering complex
+                            civil, electrical, and safety systems. The challenge was to transform a technically strong
+                            company into a digitally strong brand.<br><br>
 
-                        The previous structure did not fully reflect their scale, expertise, or
-                        international-standard
-                        positioning. We redesigned the digital experience to communicate authority, technical depth,
-                        and
-                        operational reliability.<br><br>
+                            The previous structure did not fully reflect their scale, expertise, or
+                            international-standard
+                            positioning. We redesigned the digital experience to communicate authority, technical depth,
+                            and
+                            operational reliability.<br><br>
 
-                        We built a clean, structured corporate website that highlights their infrastructure
-                        projects,
-                        power systems, and safety solutions while maintaining clarity for decision-makers and
-                        stakeholders.<br><br>
+                            We built a clean, structured corporate website that highlights their infrastructure
+                            projects,
+                            power systems, and safety solutions while maintaining clarity for decision-makers and
+                            stakeholders.<br><br>
 
-                        As a result, the company achieved stronger digital credibility, improved engagement time,
-                        and a
-                        noticeable increase in qualified inquiries after launch.<br><br>
+                            As a result, the company achieved stronger digital credibility, improved engagement time,
+                            and a
+                            noticeable increase in qualified inquiries after launch.<br><br>
 
-                    <div class="feature-box">
-                        <i class="fa-solid fa-sitemap"></i>
-                        <h4 data-key="pf1">Structured Engineering Presentation</h4>
+                        <div class="feature-box">
+                            <i class="fa-solid fa-sitemap"></i>
+                            <h4 data-key="pf1">Structured Engineering Presentation</h4>
+                        </div>
+
+                        <div class="feature-box">
+                            <i class="fa-solid fa-building-shield"></i>
+                            <h4 data-key="pf2">Authority-Driven Corporate Design</h4>
+                        </div>
+
+                        <div class="feature-box">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <h4 data-key="pf3">Performance & Engagement Optimization</h4>
+                        </div>
+
+                        <a href="https://www.asteractive.org" target="_blank" class="btn btn-outline"
+                            data-key="pl1">View
+                            Live Site</a>
+                        </p>
                     </div>
 
-                    <div class="feature-box">
-                        <i class="fa-solid fa-building-shield"></i>
-                        <h4 data-key="pf2">Authority-Driven Corporate Design</h4>
+                    <div class="toggle-wrapper">
+                        <button class="expand-project btn-1 btn-primary-1">
+                            <span class="expand-text" data-key="showMore">Show More</span>
+                            <i class="fa-solid fa-chevron-down expand-arrow"></i>
+                        </button>
                     </div>
-
-                    <div class="feature-box">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <h4 data-key="pf3">Performance & Engagement Optimization</h4>
-                    </div>
-
-                    <a href="https://www.asteractive.org" target="_blank" class="btn btn-outline" data-key="pl1">View
-                        Live Site</a>
-                    </p>
                 </div>
 
                 <div class="portfolio-image">
@@ -1535,38 +1619,50 @@
 
                 <div class="portfolio-text">
                     <h3 data-key="ph2">2 - INTERACTIVE</h3>
-                    <p id="pp1" data-key="pp2">
-                        Corporate Engineering Website<br><br>
+                    <div class="project-content">
+                        <p id="pp1" data-key="pp2">
+                            Corporate Engineering Website<br><br>
 
-                        Interactive is a leading engineering solutions provider specializing in complex electrical,
-                        mechanical, and safety systems. The challenge was to present highly technical services in a
-                        clear, professional, and user-friendly manner.<br><br>
+                            Interactive is a leading engineering solutions provider specializing in complex electrical,
+                            mechanical, and safety systems. The challenge was to present highly technical services in a
+                            clear, professional, and user-friendly manner.<br><br>
 
-                        We transformed their online presence by creating a structured, modern corporate website that
-                        highlights multi-disciplinary expertise while emphasizing safety, reliability, and compliance
-                        with international standards.<br><br>
+                            We transformed their online presence by creating a structured, modern corporate website that
+                            highlights multi-disciplinary expertise while emphasizing safety, reliability, and
+                            compliance
+                            with international standards.<br><br>
 
-                        The redesigned platform improved visitor engagement, increased qualified inquiries, and
-                        positioned Interactive as a trusted partner for large-scale engineering projects.<br><br>
+                            The redesigned platform improved visitor engagement, increased qualified inquiries, and
+                            positioned Interactive as a trusted partner for large-scale engineering projects.<br><br>
 
-                    <div class="feature-box">
-                        <i class="fa-solid fa-project-diagram"></i>
-                        <h4 data-key="pf4">Clear Multi-Disciplinary Layout</h4>
+                        <div class="feature-box">
+                            <i class="fa-solid fa-project-diagram"></i>
+                            <h4 data-key="pf4">Clear Multi-Disciplinary Layout</h4>
+                        </div>
+
+                        <div class="feature-box">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <h4 data-key="pf5">Professional Corporate Branding</h4>
+                        </div>
+
+                        <div class="feature-box">
+                            <i class="fa-solid fa-rocket"></i>
+                            <h4 data-key="pf6">Optimized Performance & Accessibility</h4>
+                        </div>
+
+                        <a href="https://interactivee.org/" target="_blank" class="btn btn-outline" data-key="pl2">View
+                            Live
+                            Site</a>
+                        </p>
                     </div>
 
-                    <div class="feature-box">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <h4 data-key="pf5">Professional Corporate Branding</h4>
+                    <div class="toggle-wrapper">
+                        <button class="expand-project btn-1 btn-primary-1">
+                            <span class="expand-text" data-key="showMore">Show More</span>
+                            <i class="fa-solid fa-chevron-down expand-arrow"></i>
+                        </button>
                     </div>
 
-                    <div class="feature-box">
-                        <i class="fa-solid fa-rocket"></i>
-                        <h4 data-key="pf6">Optimized Performance & Accessibility</h4>
-                    </div>
-
-                    <a href="https://interactivee.org/" target="_blank" class="btn btn-outline" data-key="pl2">View Live
-                        Site</a>
-                    </p>
                 </div>
 
                 <div class="portfolio-image">
@@ -1579,65 +1675,77 @@
 
                 <div class="portfolio-text">
                     <h3 data-key="ph3">3 - ZERO X ONE</h3>
-                    <p id="pp1" data-key="pp31">
-                        Project Type: Custom Store on Sellr<br><br>
+                    <div class="project-content">
+                        <p id="pp1" data-key="pp31">
+                            Project Type: Custom Store on Sellr<br><br>
 
-                        ZERO X ONE is a local fashion brand offering hoodies, sweatshirts, t-shirts, and jackets across
-                        multiple categories. The client wanted a sleek, modern online store that establishes a strong
-                        digital presence, builds trust, and increases sales.<br><br>
-                    </p>
-                    <div class="results-section">
-                        <h4 data-key="pp32">challenges</h4>
+                            ZERO X ONE is a local fashion brand offering hoodies, sweatshirts, t-shirts, and jackets
+                            across
+                            multiple categories. The client wanted a sleek, modern online store that establishes a
+                            strong
+                            digital presence, builds trust, and increases sales.<br><br>
+                        </p>
+                        <div class="results-section">
+                            <h4 data-key="pp32">challenges</h4>
+                        </div>
+
+                        <p id="pp1" data-key="pp33">
+                            1- Multiple product categories required an organized, user-friendly layout.<br>
+                            2- Client wanted a “premium” look that reflects quality and trustworthiness.<br>
+                            3- Needed to integrate product reviews and highlight key selling points (fast delivery, high
+                            quality, easy returns).<br><br>
+                        </p>
+
+                        <div class="results-section">
+                            <h4 data-key="pp34">our solutions</h4>
+                        </div>
+
+                        <p id="pp1" data-key="pp35">
+                            Customized Sellr store according to the client’s preferred design and branding.<br>
+                            Built custom sections to showcase product categories and reviews, improving usability and
+                            trust.<br>
+                            Fast and lightweight website for optimal performance.<br>
+                            Optimized checkout and shopping experience to boost conversions.<br>
+                            Fully responsive design for mobile and desktop users.<br><br>
+                        </p>
+
+                        <div class="results-section">
+                            <h4 data-key="pp36">Results</h4>
+                        </div>
+
+                        <p id="pp1" data-key="pp37">
+                            Increased site visits by ~45% in the first month.<br>
+                            Boosted online sales by ~35% through better navigation and trust indicators.<br>
+                            Strengthened brand image, making ZERO X ONE more competitive locally.<br><br>
+                        </p>
+
+                        <div class="feature-box-1">
+                            <i class="fa-solid fa-palette"></i>
+                            <h4 data-key="pf7"> &nbsp; Custom Design & Branding</h4>
+                        </div>
+
+                        <div class="feature-box">
+                            <i class="fa-solid fa-user-check"></i>
+                            <h4 data-key="pf8">Enhanced User Experience</h4>
+                        </div>
+
+                        <div class="feature-box-1">
+                            <i class="fa-solid fa-rocket"></i>
+                            <h4 data-key="pf9"> &nbsp; Performance & Mobile Optimization</h4>
+                        </div>
+
+                        <a href="https://zeroxone.site/" target="_blank" class="btn btn-outline" data-key="pl3">live
+                            site</a>
+                        </p>
                     </div>
 
-                    <p id="pp1" data-key="pp33">
-                        1- Multiple product categories required an organized, user-friendly layout.<br>
-                        2- Client wanted a “premium” look that reflects quality and trustworthiness.<br>
-                        3- Needed to integrate product reviews and highlight key selling points (fast delivery, high
-                        quality, easy returns).<br><br>
-                    </p>
-
-                    <div class="results-section">
-                        <h4 data-key="pp34">our solutions</h4>
+                    <div class="toggle-wrapper">
+                        <button class="expand-project btn-1 btn-primary-1">
+                            <span class="expand-text" data-key="showMore">Show More</span>
+                            <i class="fa-solid fa-chevron-down expand-arrow"></i>
+                        </button>
                     </div>
 
-                    <p id="pp1" data-key="pp35">
-                        Customized Sellr store according to the client’s preferred design and branding.<br>
-                        Built custom sections to showcase product categories and reviews, improving usability and
-                        trust.<br>
-                        Fast and lightweight website for optimal performance.<br>
-                        Optimized checkout and shopping experience to boost conversions.<br>
-                        Fully responsive design for mobile and desktop users.<br><br>
-                    </p>
-
-                    <div class="results-section">
-                        <h4 data-key="pp36">Results</h4>
-                    </div>
-
-                    <p id="pp1" data-key="pp37">
-                        Increased site visits by ~45% in the first month.<br>
-                        Boosted online sales by ~35% through better navigation and trust indicators.<br>
-                        Strengthened brand image, making ZERO X ONE more competitive locally.<br><br>
-                    </p>
-
-                    <div class="feature-box-1">
-                        <i class="fa-solid fa-palette"></i>
-                        <h4 data-key="pf7"> &nbsp; Custom Design & Branding</h4>
-                    </div>
-
-                    <div class="feature-box">
-                        <i class="fa-solid fa-user-check"></i>
-                        <h4 data-key="pf8">Enhanced User Experience</h4>
-                    </div>
-
-                    <div class="feature-box-1">
-                        <i class="fa-solid fa-rocket"></i>
-                        <h4 data-key="pf9"> &nbsp; Performance & Mobile Optimization</h4>
-                    </div>
-
-                    <a href="https://zeroxone.site/" target="_blank" class="btn btn-outline" data-key="pl3">live
-                        site</a>
-                    </p>
                 </div>
 
                 <div class="portfolio-image">
@@ -1645,157 +1753,203 @@
                 </div>
 
             </div>
-            <div class="portfolio-box">
 
-                <div class="portfolio-text">
-                    <h3 data-key="ph4">4 - NOAIR </h3>
-                    <p id="pp1" data-key="pp41">
-                        Project Type: Shopify Store<br><br>
+            <div class="projects-wrapper">
+                <div class="portfolio-box">
+                    <div class="portfolio-text">
+                        <h3 data-key="ph4">4 - NOAIR </h3>
+                        <div class="project-content">
+                            <p id="pp1" data-key="pp41">
+                                Project Type: Shopify Store<br><br>
 
-                        NOAIR is a local streetwear brand offering premium hoodies, custom embroidered items, and
-                        ready-to-wear designs. The client wanted a fully customized store that allows customers to
-                        Design Your Own hoodie or choose from curated ready-made collections, giving them flexibility
-                        and a unique shopping experience.<br><br>
-                    </p>
+                                NOAIR is a local streetwear brand offering premium hoodies, custom embroidered items,
+                                and
+                                ready-to-wear designs. The client wanted a fully customized store that allows customers
+                                to
+                                Design Your Own hoodie or choose from curated ready-made collections, giving them
+                                flexibility
+                                and a unique shopping experience.<br><br>
+                            </p>
 
-                    <div class="results-section">
-                        <h4 data-key="pp42">challenges</h4>
+                            <div class="results-section">
+                                <h4 data-key="pp42">challenges</h4>
+                            </div>
+
+                            <p id="pp1" data-key="pp43">
+                                1- The client needed a custom coding solution for the “Design Your Own” section, which
+                                required
+                                high
+                                interactivity and responsiveness.<br>
+                                2- Ensuring fast performance and lightweight pages while handling many custom
+                                features.<br>
+                                3- Organizing multiple product categories and designs while maintaining a smooth user
+                                experience.<br><br>
+                            </p>
+
+                            <div class="results-section">
+                                <h4 data-key="pp44">our solutions</h4>
+                            </div>
+
+                            <p id="pp1" data-key="pp45">
+                                Developed 90% of the website’s custom code, including the interactive “Design Your Own”
+                                section.<br>
+                                Optimized website performance to ensure fast loading times and smooth navigation.<br>
+                                Implemented intuitive navigation for both custom-designed and ready-to-buy products.<br>
+                                Enhanced mobile responsiveness and cross-browser compatibility.<br>
+                                Integrated product reviews and key brand selling points (quality, free shipping,
+                                comfort).<br><br>
+                            </p>
+
+                            <div class="results-section">
+                                <h4 data-key="pp46">Results</h4>
+                            </div>
+
+                            <p id="pp1" data-key="pp47">
+                                Increased site visits by ~50% within the first month.<br>
+                                Boosted online sales by ~40% through improved UX and custom interactive features.<br>
+                                Strengthened NOAIR’s brand presence, making them more competitive and recognizable in
+                                the
+                                streetwear
+                                market.<br><br>
+                            </p>
+
+                            <div class="feature-box">
+                                <i class="fa-solid fa-paint-brush"></i>
+                                <h4 data-key="pf10">Custom Interactive Design Section</h4>
+                            </div>
+
+                            <div class="feature-box">
+                                <i class="fa-solid fa-rocket"></i>
+                                <h4 data-key="pf11">Optimized Shopping Experience</h4>
+                            </div>
+
+                            <div class="feature-box-1">
+                                <i class="fa-solid fa-mobile-alt"></i>
+                                <h4 data-key="pf12"> &nbsp; Mobile & Responsive Ready</h4>
+                            </div>
+
+                            <a href="https://www.noair.store/" target="_blank" class="btn btn-outline"
+                                data-key="pl4">View
+                                live
+                                site</a>
+                        </div>
+
+                        <div class="toggle-wrapper">
+                            <button class="expand-project btn-1 btn-primary-1">
+                                <span class="expand-text" data-key="showMore">Show More</span>
+                                <i class="fa-solid fa-chevron-down expand-arrow"></i>
+                            </button>
+                        </div>
+
                     </div>
 
-                    <p id="pp1" data-key="pp43">
-                        1- The client needed a custom coding solution for the “Design Your Own” section, which required
-                        high
-                        interactivity and responsiveness.<br>
-                        2- Ensuring fast performance and lightweight pages while handling many custom features.<br>
-                        3- Organizing multiple product categories and designs while maintaining a smooth user
-                        experience.<br><br>
-                    </p>
-
-                    <div class="results-section">
-                        <h4 data-key="pp44">our solutions</h4>
+                    <div class="portfolio-image">
+                        <img src="NOAIR.png" alt="NOAIR">
                     </div>
-
-                    <p id="pp1" data-key="pp45">
-                        Developed 90% of the website’s custom code, including the interactive “Design Your Own”
-                        section.<br>
-                        Optimized website performance to ensure fast loading times and smooth navigation.<br>
-                        Implemented intuitive navigation for both custom-designed and ready-to-buy products.<br>
-                        Enhanced mobile responsiveness and cross-browser compatibility.<br>
-                        Integrated product reviews and key brand selling points (quality, free shipping,
-                        comfort).<br><br>
-                    </p>
-
-                    <div class="results-section">
-                        <h4 data-key="pp46">Results</h4>
-                    </div>
-
-                    <p id="pp1" data-key="pp47">
-                        Increased site visits by ~50% within the first month.<br>
-                        Boosted online sales by ~40% through improved UX and custom interactive features.<br>
-                        Strengthened NOAIR’s brand presence, making them more competitive and recognizable in the
-                        streetwear
-                        market.<br><br>
-                    </p>
-
-                    <div class="feature-box">
-                        <i class="fa-solid fa-paint-brush"></i>
-                        <h4 data-key="pf10">Custom Interactive Design Section</h4>
-                    </div>
-
-                    <div class="feature-box">
-                        <i class="fa-solid fa-rocket"></i>
-                        <h4 data-key="pf11">Optimized Shopping Experience</h4>
-                    </div>
-
-                    <div class="feature-box-1">
-                        <i class="fa-solid fa-mobile-alt"></i>
-                        <h4 data-key="pf12"> &nbsp; Mobile & Responsive Ready</h4>
-                    </div>
-
-                    <a href="https://www.noair.store/" target="_blank" class="btn btn-outline" data-key="pl4">View live
-                        site</a>
                 </div>
 
-                <div class="portfolio-image">
-                    <img src="NOAIR.png" alt="NOAIR">
+                <div class="portfolio-box">
+
+                    <div class="portfolio-text">
+                        <h3 data-key="ph5">5 - Dr. Ahmed Nabil – Personal Brand Website </h3>
+                        <div class="project-content">
+                            <p id="pp1" data-key="pp51">
+                                Project Type: Personal Brand | Clinic Website<br><br>
+
+                                This project was a training project designed to showcase advanced web development skills
+                                and
+                                create a functional demo for potential clients. The website represents Dr. Ahmed Nabil,
+                                a
+                                board-certified Internal Medicine specialist, and was designed to simulate a fully
+                                operational clinic website.<br><br>
+                            </p>
+
+                            <div class="results-section">
+                                <h4 data-key="pp52">challenges</h4>
+                            </div>
+
+                            <p id="pp1" data-key="pp53">
+                                1- Creating an interactive and professional clinic website for demonstration
+                                purposes.<br>
+                                2- Implementing functional features like appointment booking, clinic information, and
+                                social
+                                media
+                                integration.<br>
+                                3- Ensuring the site is modern, responsive, and user-friendly for both desktop and
+                                mobile
+                                users.<br><br>
+                            </p>
+
+                            <div class="results-section">
+                                <h4 data-key="pp54">our solutions</h4>
+                            </div>
+
+                            <p id="pp1" data-key="pp55">
+                                Developed a fully responsive HTML/CSS/JS website showcasing key clinic features.<br>
+                                Implemented Book Appointment functionality for patient convenience.<br>
+                                Added Clinic Information including services, location, and contact info.<br>
+                                Integrated social media feeds to show active engagement.<br>
+                                Designed interactive UI elements such as info boxes and service highlights.<br><br>
+                            </p>
+
+                            <div class="results-section">
+                                <h4 data-key="pp56">Results</h4>
+                            </div>
+
+                            <p id="pp1" data-key="pp57">
+                                The site serves as a professional showcase of web development and UI/UX
+                                capabilities.<br>
+                                Demonstrates functional features that clients can request in real projects.<br>
+                                Highlights skills in creating fast, modern, and responsive websites suitable for
+                                healthcare
+                                brands.<br><br>
+                            </p>
+
+                            <div class="feature-box-1">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <h4 data-key="pf13"> &nbsp; Appointment Booking</h4>
+                            </div>
+
+                            <div class="feature-box">
+                                <i class="fa-solid fa-hospital-user"></i>
+                                <h4 data-key="pf14">Clinic Information</h4>
+                            </div>
+
+                            <div class="feature-box-1">
+                                <i class="fa-solid fa-mobile-alt"></i>
+                                <h4 data-key="pf15"> &nbsp; Responsive & Modern Design</h4>
+                            </div>
+
+                            <a href="https://yousef-hegazi.github.io/Clinic/" target="_blank" class="btn btn-outline"
+                                data-key="pl5">View live site</a>
+                        </div>
+
+                        <div class="toggle-wrapper">
+                            <button class="expand-project btn-1 btn-primary-1">
+                                <span class="expand-text" data-key="showMore">Show More</span>
+                                <i class="fa-solid fa-chevron-down expand-arrow"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="portfolio-image">
+                        <img src="DR.png" alt="DR. AHMED NABIL">
+                    </div>
+
                 </div>
+
             </div>
 
-            <div class="portfolio-box">
-
-                <div class="portfolio-text">
-                    <h3 data-key="ph5">5 - Dr. Ahmed Nabil – Personal Brand Website </h3>
-                    <p id="pp1" data-key="pp51">
-                        Project Type: Personal Brand | Clinic Website<br><br>
-
-                        This project was a training project designed to showcase advanced web development skills and
-                        create a functional demo for potential clients. The website represents Dr. Ahmed Nabil, a
-                        board-certified Internal Medicine specialist, and was designed to simulate a fully
-                        operational clinic website.<br><br>
-                    </p>
-
-                    <div class="results-section">
-                        <h4 data-key="pp52">challenges</h4>
-                    </div>
-
-                    <p id="pp1" data-key="pp53">
-                        1- Creating an interactive and professional clinic website for demonstration purposes.<br>
-                        2- Implementing functional features like appointment booking, clinic information, and social
-                        media
-                        integration.<br>
-                        3- Ensuring the site is modern, responsive, and user-friendly for both desktop and mobile
-                        users.<br><br>
-                    </p>
-
-                    <div class="results-section">
-                        <h4 data-key="pp54">our solutions</h4>
-                    </div>
-
-                    <p id="pp1" data-key="pp55">
-                        Developed a fully responsive HTML/CSS/JS website showcasing key clinic features.<br>
-                        Implemented Book Appointment functionality for patient convenience.<br>
-                        Added Clinic Information including services, location, and contact info.<br>
-                        Integrated social media feeds to show active engagement.<br>
-                        Designed interactive UI elements such as info boxes and service highlights.<br><br>
-                    </p>
-
-                    <div class="results-section">
-                        <h4 data-key="pp56">Results</h4>
-                    </div>
-
-                    <p id="pp1" data-key="pp57">
-                        The site serves as a professional showcase of web development and UI/UX capabilities.<br>
-                        Demonstrates functional features that clients can request in real projects.<br>
-                        Highlights skills in creating fast, modern, and responsive websites suitable for healthcare
-                        brands.<br><br>
-                    </p>
-
-                    <div class="feature-box-1">
-                        <i class="fa-solid fa-calendar-check"></i>
-                        <h4 data-key="pf13"> &nbsp; Appointment Booking</h4>
-                    </div>
-
-                    <div class="feature-box">
-                        <i class="fa-solid fa-hospital-user"></i>
-                        <h4 data-key="pf14">Clinic Information</h4>
-                    </div>
-
-                    <div class="feature-box-1">
-                        <i class="fa-solid fa-mobile-alt"></i>
-                        <h4 data-key="pf15"> &nbsp; Responsive & Modern Design</h4>
-                    </div>
-
-                    <a href="https://yousef-hegazi.github.io/Clinic/" target="_blank" class="btn btn-outline"
-                        data-key="pl5">View live site</a>
-                </div>
-
-                <div class="portfolio-image">
-                    <img src="DR.png" alt="DR. AHMED NABIL">
-                </div>
-
+            <div class="toggle-wrapper">
+                <button class="toggle-project btn-1 btn-primary-1 show-more-projects">
+                    <span class="btn-text" data-key="SMP">Show More Projects</span>
+                    <i class="fa-solid fa-chevron-down expand-arrow"></i>
+                </button>
             </div>
 
         </div>
+
     </section>
 
     <!-- 5 WHY US -->
@@ -2547,6 +2701,10 @@
                 `,
                 fh3: "Follow Us",
                 ff: "© 2025 NexoraTech. All Rights Reserved.",
+                showMore: "Show More",
+                showLess: "Show Less",
+                SMP: "Show More Project",
+                SLP: "Show Less Project",
 
             },
             ar: {
@@ -2754,19 +2912,18 @@
                 th: "ماذا يقول عملاؤنا",
                 t1h: "م. إيهاب",
                 t1p: `
-                قدّمت NexoraTech بالضبط ما كنا نحتاجه — حضورًا رقميًا يعكس معاييرنا الهندسية. احترافية، دقة، وسهولة في التعامل.
+                قدّمت "نكسوراتك" بالضبط ما كنا نحتاجه — حضورًا رقميًا يعكس معاييرنا الهندسية. احترافية، دقة، وسهولة في التعامل.
                 `,
                 t2h: "سارة علي",
                 t2p: `
-                أصبح متجرنا أسرع وأكثر قوة وتركيزًا على التحويل. ساعدتنا NexoraTech على التوسع بما يفوق توقعاتنا.
-                `,
+                أصبح متجرنا أسرع وأكثر قوة وتركيزًا على التحويل. ساعدتنا "نكسوراتك" على التوسع بما يفوق توقعاتنا.`,
                 t3h: "م. إيهاب",
                 t3p: `
-                بعد تعاوننا الأول الناجح، كان العمل مع NexoraTech مرة أخرى قرارًا واضحًا. يقدمون دائمًا أداءً موثوقًا وهيكلًا منظمًا وعمقًا تقنيًا متميزًا.
+                بعد تعاوننا الأول الناجح، كان العمل مع "نكسوراتك" مرة أخرى قرارًا واضحًا. يقدمون دائمًا أداءً موثوقًا وهيكلًا منظمًا وعمقًا تقنيًا متميزًا.
                 `,
                 t4h: "منى حسن",
                 t4p: `
-                ما بنته NexoraTech لم يكن مجرد متجر — بل منتجًا رقميًا متكاملًا مُهندسًا باحتراف. من البرمجة المخصصة إلى تحسين الأداء، جاءت النتائج أعلى من توقعاتنا.
+                ما بنته "نكسوراتك" لم يكن مجرد متجر — بل منتجًا رقميًا متكاملًا مُهندسًا باحتراف. من البرمجة المخصصة إلى تحسين الأداء، جاءت النتائج أعلى من توقعاتنا.
                 `,
 
                 ch: "تواصل معنا",
@@ -2806,6 +2963,10 @@
                 `,
                 fh3: "تابعنا",
                 ff: "© 2025 NexoraTech. جميع الحقوق محفوظة.",
+                showMore: "اعرض المزيد",
+                showLess: "أخفِ التفاصيل",
+                SMP: "اعرض المزيد من المشاريع",
+                SLP: "أخفِ المشاريع",
 
             }
         };
@@ -2862,9 +3023,74 @@
             });
         });
 
+        document.querySelectorAll(".expand-project").forEach(btn => {
+            btn.addEventListener("click", () => {
+
+                const content = btn.closest(".portfolio-text").querySelector(".project-content");
+                const arrow = btn.querySelector(".expand-arrow");
+                const text = btn.querySelector(".expand-text");
+                const lang = localStorage.getItem("siteLanguage") || "en"; // جلب اللغة الحالية
+
+                content.classList.toggle("open");
+
+                if (content.classList.contains("open")) {
+                    text.textContent = translations[lang]["showLess"];
+                    arrow.style.transform = "rotate(180deg)";
+                } else {
+                    text.textContent = translations[lang]["showMore"];
+                    arrow.style.transform = "rotate(0deg)";
+                }
+
+            });
+        });
+
+        const allProjects = document.querySelectorAll(".portfolio-box");
+        const initialCount = 3;
+
+        allProjects.forEach((project, index) => {
+            if (index >= initialCount) {
+                project.classList.add("hidden-project");
+            }
+        });
+
+        const toggleAllBtn = document.querySelector(".show-more-projects");
+        const btnText = toggleAllBtn.querySelector(".btn-text");
+        const arrow = toggleAllBtn.querySelector(".expand-arrow");
+
+        let expanded = false;
+
+        toggleAllBtn.addEventListener("click", () => {
+
+            expanded = !expanded;
+
+            allProjects.forEach((project, index) => {
+
+                if (index >= initialCount) {
+
+                    if (expanded) {
+                        project.classList.remove("hidden-project");
+                    } else {
+                        project.classList.add("hidden-project");
+                    }
+
+                }
+
+            });
+
+            const lang = localStorage.getItem("siteLanguage") || "en";
+
+            if (expanded) {
+                btnText.textContent = translations[lang]["SLP"];
+                arrow.style.transform = "rotate(180deg)";
+            } else {
+                btnText.textContent = translations[lang]["SMP"];
+                arrow.style.transform = "rotate(0deg)";
+            }
+
+        });
+
     </script>
 
 </body>
 
 </html>
-
