@@ -204,7 +204,7 @@
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
-            transition: .3s ease;
+            transition: .5s ease;
             z-index: 1100;
         }
 
@@ -246,6 +246,11 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
         }
 
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
         /**/
 
         /* موبايل */
@@ -284,18 +289,24 @@
                 max-width: 100%;
                 width: 95%;
                 height: auto;
-                flex-direction: column !important;
+                flex-direction: column;
                 gap: 20px;
                 padding: 30px 0;
                 border-radius: 12px;
                 box-shadow: 0 15px 40px rgba(0, 0, 0, .1);
-                display: none;
+
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-15px);
+
                 z-index: 1001;
-                transition: all 0.3s ease;
+                transition: opacity .4s ease, transform .4s ease;
             }
 
             .nav-links.active {
-                display: flex;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
             }
 
             .lang-btn-modern {
@@ -3094,4 +3105,3 @@
 </body>
 
 </html>
-
