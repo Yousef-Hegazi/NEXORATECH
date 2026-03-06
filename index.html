@@ -289,7 +289,7 @@
                 max-width: 100%;
                 width: 95%;
                 height: auto;
-                flex-direction: column;
+                flex-direction: column !important;
                 gap: 20px;
                 padding: 30px 0;
                 border-radius: 12px;
@@ -325,6 +325,7 @@
             body.rtl .nav-links li {
                 /* اجبار كل لينك في سطر منفصل */
                 width: 100%;
+                text-align: center;
             }
 
         }
@@ -1172,6 +1173,15 @@
         .contact-us-box h3 {
             margin-bottom: 15px;
             font-size: 20px;
+        }
+
+        .contact-us-box {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            display: block;
+            height: 100%;
+            width: 100%;
         }
 
         /* ================= RESPONSIVE ================= */
@@ -2162,30 +2172,30 @@
             </div>
 
             <div class="contact-us-grid">
-
-                <div class="contact-us-box">
+                <a href="https://mail.google.com/mail/?view=cm&to=yousefhegazi489@gmail.com" target="_blank" class="contact-us-box">
                     <i class="fa-solid fa-envelope"></i>
                     <h3 data-key="ch1">Email Us</h3>
                     <p>yousefhegazi489@gmail.com</p>
-                </div>
+                </a>
 
-                <div class="contact-us-box">
+
+                <a href="https://wa.me/201229851557" target="_blank" class="contact-us-box">
                     <i class="fa-brands fa-whatsapp"></i>
                     <h3 data-key="ch2">Chat On WhatsApp</h3>
                     <p>01229851557</p>
-                </div>
+                </a>
 
-                <div class="contact-us-box">
+                <a href="tel:+201229851557" target="_blank" class="contact-us-box">
                     <i class="fa-solid fa-phone"></i>
                     <h3 data-key="ch3">Call Sales</h3>
                     <p>01229851557</p>
-                </div>
+                </a>
 
-                <div class="contact-us-box">
+                <a href="tel:+201229851557" target="_blank" class="contact-us-box">
                     <i class="fa-solid fa-headset"></i>
                     <h3 data-key="ch4">Call Support</h3>
                     <p>01229851557</p>
-                </div>
+                </a>
             </div>
 
         </div>
