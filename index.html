@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexoraTech | Digital Growth Agency</title>
-
+    <title data-key="comptitle">NexoraTech | Web Development & Digital Growth</title>
+    <link rel="icon" href="Logo2.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <style>
@@ -28,7 +29,7 @@
 
         body {
             margin: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", "tajawal", system-ui, "Segoe UI Emoji", sans-serif;
             background: var(--light);
             color: #111;
             transition: .3s;
@@ -71,8 +72,8 @@
             width: 100%;
             display: flex;
             align-items: center;
-            padding: 12px 120px;
-            background: rgba(255, 255, 255, 0.95);
+            padding: 8px 120px;
+            background: #fffffff2;
             backdrop-filter: blur(10px);
             z-index: 1000;
             box-shadow: 0 5px 25px rgba(0, 0, 0, .04);
@@ -94,6 +95,11 @@
 
         .logo span {
             color: var(--primary);
+        }
+
+        .logo img {
+            margin-bottom: -4px;
+            height: 40px;
         }
 
         /* اللينكات */
@@ -251,6 +257,11 @@
             align-items: center;
         }
 
+        .flag {
+            width: 21px;
+            height: auto;
+        }
+
         /**/
 
         /* موبايل */
@@ -348,7 +359,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(48px, 5vw, 70px);
+            font-size: clamp(48px, 5vw, 65px);
             line-height: 1.1;
         }
 
@@ -416,9 +427,9 @@
             }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 40px;
                 /* تصغير متوازن */
-                line-height: 1.3;
+                line-height: 1.2;
             }
 
             .hero p {
@@ -769,7 +780,7 @@
         }
 
         .expand-arrow {
-            font-size: 16px;
+            font-size: 20px;
             display: inline-block;
             transition: transform 0.3s ease;
             transform-origin: center;
@@ -1172,7 +1183,7 @@
 
         .contact-us-box h3 {
             margin-bottom: 15px;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .contact-us-box {
@@ -1395,7 +1406,11 @@
     <div class="overlay" id="overlay"></div>
 
     <nav>
-        <div class="logo"><a href="#home">Nexora<span>Tech</span></a></div>
+        <div class="logo">
+            <a href="#home">
+                <img src="MainLogo.png" alt="NexoraTech Logo">
+            </a>
+        </div>
 
         <!-- Nav Links -->
         <ul class="nav-links">
@@ -1419,8 +1434,8 @@
     </nav>
 
     <div class="lang-modal" id="langModal">
-        <div class="lang-option" data-lang="en">🇬🇧 English</div>
-        <div class="lang-option" data-lang="ar">🇪🇬 العربية</div>
+        <div class="lang-option" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" class="flag"> English</div>
+        <div class="lang-option" data-lang="ar"><img src="https://flagcdn.com/w40/eg.png" class="flag"> العربية</div>
     </div>
 
     </div>
@@ -2172,7 +2187,8 @@
             </div>
 
             <div class="contact-us-grid">
-                <a href="https://mail.google.com/mail/?view=cm&to=yousefhegazi489@gmail.com" target="_blank" class="contact-us-box">
+                <a href="https://mail.google.com/mail/?view=cm&to=yousefhegazi489@gmail.com" target="_blank"
+                    class="contact-us-box">
                     <i class="fa-solid fa-envelope"></i>
                     <h3 data-key="ch1">Email Us</h3>
                     <p>yousefhegazi489@gmail.com</p>
@@ -2463,6 +2479,7 @@
 
         const translations = {
             en: {
+                comptitle: "NexoraTech | Web Development & Digital Growth",
                 home: "Home",
                 about: "About",
                 services: "Services",
@@ -2730,6 +2747,7 @@
 
             },
             ar: {
+                comptitle: "NexoraTech | شريكك في تطوير الويب والنمو الرقمي",
                 home: `الرئيسية`,
                 about: `من نحن`,
                 services: `خدماتنا`,
