@@ -2273,9 +2273,9 @@
         <div class="contact-container reveal">
             <h2 data-key="ct">Let’s Build Something That Drives Results</h2>
             <form>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
+                <input type="text" placeholder="Name" required data-placeholder-key="name">
+                <input type="email" placeholder="Email" required data-placeholder-key="email">
+                <textarea placeholder="Message" required data-placeholder-key="message"></textarea>
                 <a href="" target="_blank" class="btn btn-primary" data-key="cm">Send Message</a>
             </form>
         </div>
@@ -2795,8 +2795,12 @@
                 showLess: "Show Less",
                 SMP: "Show More Project",
                 SLP: "Show Less Project",
+                name: "Name",
+                email: "Email",
+                message: "Message",
 
             },
+
             ar: {
                 comptitle: "NexoraTech | شريكك في تطوير الويب والنمو الرقمي",
                 home: `الرئيسية`,
@@ -3057,6 +3061,10 @@
                 showLess: "أخفِ التفاصيل",
                 SMP: "اعرض المزيد من المشاريع",
                 SLP: "أخفِ المشاريع",
+                name: "الاسم",
+                email: "البريد الإلكتروني",
+                message: "الرسالة",
+
 
             }
         };
@@ -3065,6 +3073,12 @@
             document.querySelectorAll("[data-key]").forEach(element => {
                 const key = element.getAttribute("data-key");
                 element.textContent = translations[lang][key];
+            });
+
+            // النصوص داخل الـ inputs والـ textarea
+            document.querySelectorAll("[data-placeholder-key]").forEach(element => {
+                const key = element.getAttribute("data-placeholder-key");
+                element.setAttribute("placeholder", translations[lang][key]);
             });
 
             // عشان الاتجاه يتغير
